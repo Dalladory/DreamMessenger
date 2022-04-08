@@ -1,0 +1,15 @@
+D:\c-sharp project\DreamMessenger\Server\bin\Debug\net6.0\Server.exe
+D:\c-sharp project\DreamMessenger\Server\bin\Debug\net6.0\Server.deps.json
+D:\c-sharp project\DreamMessenger\Server\bin\Debug\net6.0\Server.runtimeconfig.json
+D:\c-sharp project\DreamMessenger\Server\bin\Debug\net6.0\Server.dll
+D:\c-sharp project\DreamMessenger\Server\bin\Debug\net6.0\Server.pdb
+D:\c-sharp project\DreamMessenger\Server\obj\Debug\net6.0\Server.csproj.AssemblyReference.cache
+D:\c-sharp project\DreamMessenger\Server\obj\Debug\net6.0\Server.GeneratedMSBuildEditorConfig.editorconfig
+D:\c-sharp project\DreamMessenger\Server\obj\Debug\net6.0\Server.AssemblyInfoInputs.cache
+D:\c-sharp project\DreamMessenger\Server\obj\Debug\net6.0\Server.AssemblyInfo.cs
+D:\c-sharp project\DreamMessenger\Server\obj\Debug\net6.0\Server.csproj.CoreCompileInputs.cache
+D:\c-sharp project\DreamMessenger\Server\obj\Debug\net6.0\Server.dll
+D:\c-sharp project\DreamMessenger\Server\obj\Debug\net6.0\refint\Server.dll
+D:\c-sharp project\DreamMessenger\Server\obj\Debug\net6.0\Server.pdb
+D:\c-sharp project\DreamMessenger\Server\obj\Debug\net6.0\Server.genruntimeconfig.cache
+D:\c-sharp project\DreamMessenger\Server\obj\Debug\net6.0\ref\Server.dll
