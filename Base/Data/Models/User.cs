@@ -12,7 +12,12 @@ namespace Base.Data.Models
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Email { get; set; }
+        public string Login { get; set; }
         public string Password { get; set; }
+
+        // public List<Chat> Chat { get; set; }
+
+
 
         public string FullName
         {
