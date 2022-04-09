@@ -33,8 +33,8 @@ namespace Base.Data.Classes
          public User GetUserById(uint id)
         {
             AppDbContext context = new AppDbContext();
-            var users = context.Users.Where(b => b.Id == id).FirstOrDefault();
-            return users;
+            var user = context.Users.Where(b => b.Id == id).FirstOrDefault();
+            return user;
         }
          public User GetUserByLogin(string login)
         {

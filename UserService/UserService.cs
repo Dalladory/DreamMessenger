@@ -35,7 +35,15 @@ namespace UserService
 
         public void AddUser(User user)
         {
-            _userRepository.AddUser(user);
+            try
+            {
+                _userRepository.AddUser(user);
+            }
+            catch (Exception ex)
+            {
+                // Some info to status bar or somewhere
+            }
+           
         }
 
         public void RemoveUser(User user)
@@ -45,7 +53,15 @@ namespace UserService
 
         public void EditUser(User user)
         {
-            _userRepository.EditUser(user);
+            try
+            {
+                _userRepository.EditUser(user);
+
+            }
+            catch (Exception)
+            {
+                // Some info to status bar or somewhere
+            }
         }
 
 
