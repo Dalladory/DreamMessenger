@@ -13,7 +13,7 @@ namespace Base.Data.Interfaces
         List<User> GetUsers();
         void RemoveUser(User user);
         void EditUser(User user);
-        User GetUserById(uint id);
+        User GetUserById(int id);
         User GetUserByLogin(string login);
 
     }

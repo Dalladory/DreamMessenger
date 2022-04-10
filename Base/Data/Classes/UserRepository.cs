@@ -30,7 +30,7 @@ namespace Base.Data.Classes
             AppDbContext context = new AppDbContext();
             return context.Users.ToList();
         }
-         public User GetUserById(uint id)
+         public User GetUserById(int id)
         {
             AppDbContext context = new AppDbContext();
             var user = context.Users.Where(b => b.Id == id).FirstOrDefault();

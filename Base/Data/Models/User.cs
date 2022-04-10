@@ -27,18 +27,6 @@ namespace Base.Data.Models
         //[Compare("Password")]
         //public string ConfirmPassword { get; set; }
 
-        public User(int id, string name,string surname,string email, string login, string password)
-        {
-            this.Id = id;
-            this.Name = name;   
-            this.Surname = surname;
-            this.Email = email;
-            this.Login = login;
-            this.Password = password;
-        }
-
-
-
 
         public string FullName
         {
