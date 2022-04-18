@@ -27,3 +27,37 @@ D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Server.dll
 D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Base.pdb
 D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Server.pdb
 D:\c-sharp project\DreamMessenger\Client\obj\Debug\net6.0-windows\Client.csproj.CopyComplete
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Server.deps.json
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Server.runtimeconfig.json
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Server.exe
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Client.exe
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Client.deps.json
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Client.runtimeconfig.json
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Client.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Client.pdb
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Base.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Server.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Base.pdb
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Server.pdb
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client.csproj.AssemblyReference.cache
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Windows\LoginWindow.g.cs
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Windows\RegistrationWindow.g.cs
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client_MarkupCompile.cache
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client_MarkupCompile.lref
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Windows\LoginWindow.baml
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Windows\RegistrationWindow.baml
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client.g.resources
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client.AssemblyInfoInputs.cache
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client.AssemblyInfo.cs
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client.csproj.CopyComplete
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client.dll
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\refint\Client.dll
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client.pdb
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client.genruntimeconfig.cache
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\ref\Client.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\SimpleTCP.dll

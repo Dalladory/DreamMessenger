@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
+      "SimpleTCP/1.0.24": {
+        "type": "package",
+        "compile": {
+          "lib/net45/SimpleTCP.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SimpleTCP.dll": {}
+        }
+      },
       "Base/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -25,6 +34,18 @@
     }
   },
   "libraries": {
+    "SimpleTCP/1.0.24": {
+      "sha512": "mQEKbXruksWRmKeUuID7S+Ltg092EiWXwnomnVYohkY+/rTRiIp4PUTE/bdBEj6oh1gIt0lp4l0GBlwtOhqU5w==",
+      "type": "package",
+      "path": "simpletcp/1.0.24",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/SimpleTCP.dll",
+        "simpletcp.1.0.24.nupkg.sha512",
+        "simpletcp.nuspec"
+      ]
+    },
     "Base/1.0.0": {
       "type": "project",
       "path": "../Base/Base.csproj",
@@ -39,23 +60,24 @@
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "Base >= 1.0.0",
-      "Server >= 1.0.0"
+      "Server >= 1.0.0",
+      "SimpleTCP >= 1.0.24"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\Dell\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\c-sharp project\\DreamMessenger\\Client\\Client.csproj",
+      "projectUniqueName": "C:\\Users\\Dell\\Desktop\\test\\Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "D:\\c-sharp project\\DreamMessenger\\Client\\Client.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\c-sharp project\\DreamMessenger\\Client\\obj\\",
+      "projectPath": "C:\\Users\\Dell\\Desktop\\test\\Client\\Client.csproj",
+      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dell\\Desktop\\test\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -69,11 +91,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "D:\\c-sharp project\\DreamMessenger\\Base\\Base.csproj": {
-              "projectPath": "D:\\c-sharp project\\DreamMessenger\\Base\\Base.csproj"
+            "C:\\Users\\Dell\\Desktop\\test\\Base\\Base.csproj": {
+              "projectPath": "C:\\Users\\Dell\\Desktop\\test\\Base\\Base.csproj"
             },
-            "D:\\c-sharp project\\DreamMessenger\\Server\\Server.csproj": {
-              "projectPath": "D:\\c-sharp project\\DreamMessenger\\Server\\Server.csproj"
+            "C:\\Users\\Dell\\Desktop\\test\\Server\\Server.csproj": {
+              "projectPath": "C:\\Users\\Dell\\Desktop\\test\\Server\\Server.csproj"
             }
           }
         }
@@ -87,6 +109,12 @@
     "frameworks": {
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
+        "dependencies": {
+          "SimpleTCP": {
+            "target": "Package",
+            "version": "[1.0.24, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -108,5 +136,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'SimpleTCP 1.0.24' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "SimpleTCP",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    }
+  ]
 }

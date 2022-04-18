@@ -10,3 +10,15 @@ D:\c-sharp project\DreamMessenger\Base\obj\Debug\net6.0\Base.dll
 D:\c-sharp project\DreamMessenger\Base\obj\Debug\net6.0\refint\Base.dll
 D:\c-sharp project\DreamMessenger\Base\obj\Debug\net6.0\Base.pdb
 D:\c-sharp project\DreamMessenger\Base\obj\Debug\net6.0\ref\Base.dll
+C:\Users\Dell\Desktop\test\Base\bin\Debug\net6.0\Base.deps.json
+C:\Users\Dell\Desktop\test\Base\bin\Debug\net6.0\Base.dll
+C:\Users\Dell\Desktop\test\Base\bin\Debug\net6.0\Base.pdb
+C:\Users\Dell\Desktop\test\Base\obj\Debug\net6.0\Base.csproj.AssemblyReference.cache
+C:\Users\Dell\Desktop\test\Base\obj\Debug\net6.0\Base.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell\Desktop\test\Base\obj\Debug\net6.0\Base.AssemblyInfoInputs.cache
+C:\Users\Dell\Desktop\test\Base\obj\Debug\net6.0\Base.AssemblyInfo.cs
+C:\Users\Dell\Desktop\test\Base\obj\Debug\net6.0\Base.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\test\Base\obj\Debug\net6.0\Base.dll
+C:\Users\Dell\Desktop\test\Base\obj\Debug\net6.0\refint\Base.dll
+C:\Users\Dell\Desktop\test\Base\obj\Debug\net6.0\Base.pdb
+C:\Users\Dell\Desktop\test\Base\obj\Debug\net6.0\ref\Base.dll

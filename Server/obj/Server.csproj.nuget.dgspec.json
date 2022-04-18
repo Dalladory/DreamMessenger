@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\c-sharp project\\DreamMessenger\\Server\\Server.csproj": {}
+    "C:\\Users\\Dell\\Desktop\\test\\Server\\Server.csproj": {}
   },
   "projects": {
-    "D:\\c-sharp project\\DreamMessenger\\Server\\Server.csproj": {
+    "C:\\Users\\Dell\\Desktop\\test\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\c-sharp project\\DreamMessenger\\Server\\Server.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\test\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "D:\\c-sharp project\\DreamMessenger\\Server\\Server.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\c-sharp project\\DreamMessenger\\Server\\obj\\",
+        "projectPath": "C:\\Users\\Dell\\Desktop\\test\\Server\\Server.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dell\\Desktop\\test\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
