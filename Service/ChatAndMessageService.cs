@@ -1,8 +1,8 @@
 ﻿using Base.Data.Classes;
 using Base.Data.Models;
+using System.Diagnostics;
 
-
-    public class ChatAndMessageService
+public class ChatAndMessageService
     {
         readonly ChatAndMessageRepository _chatAndMessageRepository;
 
@@ -90,7 +90,7 @@ using Base.Data.Models;
             }
             catch (Exception ex)
             {
-                // Some info about trouble
+                Debug.WriteLine(ex.Message);
             }
         }
 

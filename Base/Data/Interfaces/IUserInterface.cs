@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Base.Data.Interfaces
 {
-    public interface IUserInterface
+    public  interface IUserInterface
     {
         void AddUser(User user);
         List<User> GetUsers();

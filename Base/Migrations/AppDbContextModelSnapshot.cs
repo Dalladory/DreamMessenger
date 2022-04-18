@@ -24,29 +24,34 @@ namespace Base.Migrations
 
             modelBuilder.Entity("Base.Data.Models.Chat", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<long>("UserId")
-                        .HasColumnType("bigint");
+                    b.Property<int>("CompanionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CreatorId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("CompanionId");
+
+                    b.HasIndex("CreatorId");
 
                     b.ToTable("Chats");
                 });
 
             modelBuilder.Entity("Base.Data.Models.ErrorsLog", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("ErrorMessage")
                         .IsRequired()
@@ -62,14 +67,14 @@ namespace Base.Migrations
 
             modelBuilder.Entity("Base.Data.Models.Message", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<long>("ChatId")
-                        .HasColumnType("bigint");
+                    b.Property<int>("ChatId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("SendDate")
                         .HasColumnType("datetime2");
@@ -78,8 +83,8 @@ namespace Base.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("UserId")
-                        .HasColumnType("bigint");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -90,11 +95,11 @@ namespace Base.Migrations
 
             modelBuilder.Entity("Base.Data.Models.User", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -124,13 +129,21 @@ namespace Base.Migrations
 
             modelBuilder.Entity("Base.Data.Models.Chat", b =>
                 {
-                    b.HasOne("Base.Data.Models.User", "User")
+                    b.HasOne("Base.Data.Models.User", "Companion")
                         .WithMany()
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("CompanionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("User");
+                    b.HasOne("Base.Data.Models.User", "Creator")
+                        .WithMany()
+                        .HasForeignKey("CreatorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Companion");
+
+                    b.Navigation("Creator");
                 });
 
             modelBuilder.Entity("Base.Data.Models.Message", b =>

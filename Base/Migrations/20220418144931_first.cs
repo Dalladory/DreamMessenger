@@ -46,17 +46,24 @@ namespace Base.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserId = table.Column<int>(type: "int", nullable: false)
+                    CreatorId = table.Column<int>(type: "int", nullable: false),
+                    CompanionId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Chats", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Chats_Users_UserId",
-                        column: x => x.UserId,
+                        name: "FK_Chats_Users_CompanionId",
+                        column: x => x.CompanionId,
                         principalTable: "Users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
+                    table.ForeignKey(
+                        name: "FK_Chats_Users_CreatorId",
+                        column: x => x.CreatorId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -82,9 +89,14 @@ namespace Base.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Chats_UserId",
+                name: "IX_Chats_CompanionId",
                 table: "Chats",
-                column: "UserId");
+                column: "CompanionId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Chats_CreatorId",
+                table: "Chats",
+                column: "CreatorId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Messages_ChatId",

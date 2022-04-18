@@ -16,10 +16,10 @@ namespace Program
 
             User user1 = new User
             {
-                Name ="Nikolai",
+                Name = "Nikolai",
                 Surname = "Burdiugh",
                 Email = "burdiugh.bk@gmail.com",
-                Login ="apexloIn23",
+                Login = "apexloIn23",
                 Password = "rocketmaN123_tv",
             };
 
@@ -34,6 +34,48 @@ namespace Program
 
             _userService.AddUser(user1);
             _userService.AddUser(user2);
+
+            Chat chat = new Chat()
+            {
+                CreatorId = 1,
+                CompanionId = 2,
+            };
+
+            _chatAndMessageService.CreateChat(chat);
+
+            Message message = new Message()
+            {
+                ChatId = 1,
+                UserId = 2,
+                Text = "Hello, how are you?",
+                SendDate = DateTime.Now,
+            };
+            _chatAndMessageService.SendMessage(message);
+
+            Message message2 = new Message()
+            {
+                ChatId = 1,
+                UserId = 1,
+                Text = "Hello, i am fine, thank you.",
+                SendDate = DateTime.Now,
+            };
+            _chatAndMessageService.SendMessage(message2);
+
+              Message message3 = new Message()
+            {
+                ChatId = 1,
+                UserId = 2,
+                Text = "So that's it?",
+                SendDate = DateTime.Now,
+            };
+            _chatAndMessageService.SendMessage(message3);
+
+
+
+
+
+
+
 
 
         }

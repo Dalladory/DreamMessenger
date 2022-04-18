@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Base.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220410110031_first")]
+    [Migration("20220418144931_first")]
     partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,12 +32,17 @@ namespace Base.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("UserId")
+                    b.Property<int>("CompanionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CreatorId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("CompanionId");
+
+                    b.HasIndex("CreatorId");
 
                     b.ToTable("Chats");
                 });
@@ -126,13 +131,21 @@ namespace Base.Migrations
 
             modelBuilder.Entity("Base.Data.Models.Chat", b =>
                 {
-                    b.HasOne("Base.Data.Models.User", "User")
+                    b.HasOne("Base.Data.Models.User", "Companion")
                         .WithMany()
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("CompanionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("User");
+                    b.HasOne("Base.Data.Models.User", "Creator")
+                        .WithMany()
+                        .HasForeignKey("CreatorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Companion");
+
+                    b.Navigation("Creator");
                 });
 
             modelBuilder.Entity("Base.Data.Models.Message", b =>
