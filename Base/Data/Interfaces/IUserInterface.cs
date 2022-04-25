@@ -15,6 +15,7 @@ namespace Base.Data.Interfaces
         void EditUser(User user);
         User GetUserById(int id);
         User GetUserByLogin(string login);
+        bool IsValidCredentials(string login, string password);
 
     }
 }

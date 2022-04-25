@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Base.Data.Classes
 {
-    public class UserRepository : IUserInterface
+    public class UserRepository
     {
         
         public void AddUser(User user)
@@ -48,6 +48,20 @@ namespace Base.Data.Classes
             AppDbContext context = new AppDbContext();
             context.Remove(user);
             context.SaveChanges();
+        }
+
+        public bool IsValidCredentials(string login, string password)
+        {
+            AppDbContext context = new AppDbContext();
+            var user = context.Users.Where(l => l.Login == login).FirstOrDefault();
+            if (user != null)
+            {
+                if (user.Password==password)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Base.Data.Classes
 {
-    public class ChatAndMessageRepository : IChatAndMessageInterface
+    public class ChatAndMessageRepository
     {
         public void CreateChat(Chat chat)
         {
