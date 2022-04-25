@@ -10,53 +10,53 @@ namespace Base.Data.Classes
 {
     public class UserRepository
     {
-        
-        public void AddUser(User user)
+
+        static public void AddUser(User user)
         {
-           AppDbContext context = new AppDbContext();
-           context.Add(user);
-           context.SaveChanges();
+            AppDbContext context = new AppDbContext();
+            context.Add(user);
+            context.SaveChanges();
         }
 
-        public void EditUser(User user)
+        static public void EditUser(User user)
         {
             AppDbContext context = new AppDbContext();
             context.Update(user);
             context.SaveChanges();
         }
 
-        public List<User> GetUsers()
+        static public List<User> GetUsers()
         {
             AppDbContext context = new AppDbContext();
             return context.Users.ToList();
         }
-         public User GetUserById(int id)
+        static public User GetUserById(int id)
         {
             AppDbContext context = new AppDbContext();
             var user = context.Users.Where(b => b.Id == id).FirstOrDefault();
             return user;
         }
-         public User GetUserByLogin(string login)
+        static public User GetUserByLogin(string login)
         {
             AppDbContext context = new AppDbContext();
             var user = context.Users.Where(b => b.Login == login).FirstOrDefault();
             return user;
         }
 
-        public void RemoveUser(User user)
+        static public void RemoveUser(User user)
         {
             AppDbContext context = new AppDbContext();
             context.Remove(user);
             context.SaveChanges();
         }
 
-        public bool IsValidCredentials(string login, string password)
+        static public bool IsValidCredentials(string login, string password)
         {
             AppDbContext context = new AppDbContext();
             var user = context.Users.Where(l => l.Login == login).FirstOrDefault();
             if (user != null)
             {
-                if (user.Password==password)
+                if (user.Password == password)
                 {
                     return true;
                 }

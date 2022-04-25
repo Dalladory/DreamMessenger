@@ -4,13 +4,7 @@ using System.Diagnostics;
 
 public class ChatAndMessageService
     {
-        readonly ChatAndMessageRepository _chatAndMessageRepository;
-
-        public ChatAndMessageService(ChatAndMessageRepository chatAndMessageRepository)
-        {
-            _chatAndMessageRepository = chatAndMessageRepository;
-        }
-
+       
 
         // Message service's methods: 
 
@@ -18,7 +12,7 @@ public class ChatAndMessageService
         {
             try
             {
-                return _chatAndMessageRepository.GetMessageById(id);
+                return ChatAndMessageRepository.GetMessageById(id);
             }
             catch (Exception)
             {
@@ -31,7 +25,7 @@ public class ChatAndMessageService
         {
             try
             {
-                _chatAndMessageRepository.SendMessage(message);
+            ChatAndMessageRepository.SendMessage(message);
             }
             catch (Exception ex)
             {
@@ -43,7 +37,7 @@ public class ChatAndMessageService
         {
             try
             {
-                _chatAndMessageRepository.EditMessage(message);
+            ChatAndMessageRepository.EditMessage(message);
             }
             catch (Exception ex)
             {
@@ -55,7 +49,7 @@ public class ChatAndMessageService
         {
             try
             {
-                _chatAndMessageRepository.RemoveMessages(message);
+            ChatAndMessageRepository.RemoveMessages(message);
             }
             catch (Exception)
             {
@@ -72,7 +66,7 @@ public class ChatAndMessageService
         {
             try
             {
-                return _chatAndMessageRepository.GetChatById(id);
+                return ChatAndMessageRepository.GetChatById(id);
 
             }
             catch (Exception)
@@ -86,7 +80,7 @@ public class ChatAndMessageService
         {
             try
             {
-                _chatAndMessageRepository.CreateChat(chat);
+            ChatAndMessageRepository.CreateChat(chat);
             }
             catch (Exception ex)
             {
@@ -98,7 +92,7 @@ public class ChatAndMessageService
         {
             try
             {
-                _chatAndMessageRepository.EditChat(chat);
+            ChatAndMessageRepository.EditChat(chat);
             }
             catch (Exception ex)
             {
@@ -110,7 +104,7 @@ public class ChatAndMessageService
         {
             try
             {
-                _chatAndMessageRepository.RemoveChat(chat);
+            ChatAndMessageRepository.RemoveChat(chat);
             }
             catch (Exception)
             {

@@ -10,18 +10,11 @@ using System.Threading.Tasks;
 public class UserService
 {
 
-    readonly private UserRepository _userRepository;
-
-    public UserService(UserRepository userRepository)
-    {
-        _userRepository = userRepository;
-    }
-
-    public List<User> GetUsers()
+    static public List<User> GetUsers()
     {
         try
         {
-            return _userRepository.GetUsers();
+            return UserRepository.GetUsers();
         }
         catch (Exception)
         {
@@ -34,7 +27,7 @@ public class UserService
     {
         try
         {
-            return _userRepository.GetUserById(id);
+            return UserRepository.GetUserById(id);
         }
         catch (Exception)
         {
@@ -47,7 +40,7 @@ public class UserService
     {
         try
         {
-            return _userRepository.GetUserByLogin(login);
+            return UserRepository.GetUserByLogin(login);
         }
         catch (Exception)
         {
@@ -60,7 +53,7 @@ public class UserService
     {
         try
         {
-            _userRepository.AddUser(user);
+            UserRepository.AddUser(user);
         }
         catch (Exception ex)
         {
@@ -72,7 +65,7 @@ public class UserService
     {
         try
         {
-            _userRepository.RemoveUser(user);
+            UserRepository.RemoveUser(user);
         }
         catch (Exception)
         {
@@ -84,7 +77,7 @@ public class UserService
     {
         try
         {
-            _userRepository.EditUser(user);
+            UserRepository.EditUser(user);
 
         }
         catch (Exception)
@@ -95,7 +88,7 @@ public class UserService
 
     public bool IsValidCredentials(string login, string password)
     {
-        return _userRepository.IsValidCredentials(login,password);
+        return UserRepository.IsValidCredentials(login, password);
     }
 
 }

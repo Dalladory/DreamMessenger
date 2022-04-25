@@ -10,8 +10,15 @@ namespace Program
        
         static void Main()
         {
-            ChatAndMessageService _chatAndMessageService = new ChatAndMessageService(new ChatAndMessageRepository());
-            UserService _userService = new UserService(new UserRepository());
+           
+
+            //var users = UserService.GetUsers();
+            //foreach (var user in users)
+            //{
+            //    Console.WriteLine(user.Name);
+            //}
+
+            Console.WriteLine(ChatAndMessageRepository.GetMessageById(2).Text); 
 
 
             //User user1 = new User
@@ -71,12 +78,12 @@ namespace Program
             //_chatAndMessageService.SendMessage(message3);
 
 
-            Console.WriteLine("Login: ");
-            string login = Console.ReadLine();
-            Console.WriteLine("Pass: ");
-            string pass = Console.ReadLine();
+            //Console.WriteLine("Login: ");
+            //string login = Console.ReadLine();
+            //Console.WriteLine("Pass: ");
+            //string pass = Console.ReadLine();
 
-            Console.WriteLine(_userService.IsValidCredentials(login, pass));
+            //Console.WriteLine(_userService.IsValidCredentials(login, pass));
 
 
 
