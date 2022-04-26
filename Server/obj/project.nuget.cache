@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Z+cvFgvKQLSstwnT5qqshEKDa7Q49z4JXsxv84Run5AEjlGi+yXp1x/b05N8pcm13JXWWx+zIrjy997TZs/k5A==",
+  "dgSpecHash": "ZFiyBU7UNU3xLeiq8W9TAjM+5fLQ5WFHveDH2vjcmcah/7pnkxz/lGAAPUGC9KPo2rsywKMEXPUMHgr/b789Iw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Server\\Server.csproj",
+  "projectFilePath": "D:\\c-sharp project\\DreamMessenger\\Server\\Server.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

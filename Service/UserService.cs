@@ -86,9 +86,9 @@ public class UserService
         }
     }
 
-    public bool IsValidCredentials(string login, string password)
+    public User SignIn(string login, string password)
     {
-        return UserRepository.IsValidCredentials(login, password);
+        return UserRepository.SignIn(login, password);
     }
 
 }

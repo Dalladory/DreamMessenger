@@ -50,18 +50,11 @@ namespace Base.Data.Classes
             context.SaveChanges();
         }
 
-        static public bool IsValidCredentials(string login, string password)
+        static public User SignIn(string login, string password)
         {
             AppDbContext context = new AppDbContext();
-            var user = context.Users.Where(l => l.Login == login).FirstOrDefault();
-            if (user != null)
-            {
-                if (user.Password == password)
-                {
-                    return true;
-                }
-            }
-            return false;
+            var user = context.Users.FirstOrDefault(u => u.Password == password && u.Email == login || u.Login == login);
+            return user;
         }
     }
 }
