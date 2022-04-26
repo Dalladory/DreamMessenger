@@ -25,7 +25,7 @@ namespace Server
 
             while (true)
             {
-            byte[] buffer = new byte[1024];
+                byte[] buffer = new byte[1024];
                 bytesCount = socket.Receive(buffer);
 
                 string[] arr = Encoding.UTF8.GetString(buffer, 0, bytesCount).Split("|", 2, StringSplitOptions.RemoveEmptyEntries);
@@ -36,6 +36,11 @@ namespace Server
                     case "SignIn":
                         {
                             result = UserManager.SignIn(arr[1]);
+                            break;
+                        }
+                    case "AddUser":
+                        {
+                            result = UserManager.AddUser(arr[1]);
                             break;
                         }
                     default:
