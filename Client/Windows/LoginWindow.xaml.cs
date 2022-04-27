@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,6 +21,7 @@ namespace Client.Windows
     /// </summary>
     public partial class LoginWindow : Window
     {
+        const int PORT = 8080;
         public LoginWindow()
         {
             InitializeComponent();
@@ -27,9 +30,34 @@ namespace Client.Windows
         {
             if (!string.IsNullOrEmpty(tbLogin.Text) && !string.IsNullOrEmpty(pbPassword.Password))
             {
-                //надіслать дані серверу
-                MessageBox.Show("Ok");
-                
+                Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+                IPAddress ipaddress = null;
+                IPAddress.TryParse("135.181.63.54", out ipaddress);
+
+                try
+                {
+
+                    client.Connect(ipaddress, PORT);
+                    byte[] bufferSend = Encoding.ASCII.GetBytes($"SignIn|{tbEmeil.Text}/{tbLogin.Text}|{pbPassword.Password}");
+                    client.Send(bufferSend);
+                }
+                catch (Exception ex)
+                {
+                }
+                finally
+                {
+                    if (client != null)
+                    {
+                        if (client.Connected)
+                        {
+                            client.Shutdown(SocketShutdown.Both);
+                        }
+                        client.Close();
+                        client.Dispose();
+                    }
+                }
+
                 MainWindow mainWindow = new MainWindow();
                 this.Close();
                 mainWindow.Show();

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Base.Data.Models
 {
+    [Serializable]
     public class User
     {
         public int Id { get; set; }

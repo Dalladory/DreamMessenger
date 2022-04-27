@@ -3,7 +3,11 @@ using SimpleTCP;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
+using System.Runtime.Serialization.Json;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -46,7 +50,34 @@ namespace Client.Windows
                     Login = tbLogin.Text,
                     Password = pbPassword_1.Password
                 };
+                Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
+                IPAddress ipaddress = null;
+                IPAddress.TryParse("135.181.63.54", out ipaddress);
+
+                try
+                {
+                   
+                    client.Connect(ipaddress, PORT);
+                    string usertSerialized = JsonSerializer.Serialize(newUser);
+                    byte[] bufferSend = Encoding.ASCII.GetBytes("AdUser|"+usertSerialized);
+                    client.Send(bufferSend);
+                }
+                catch (Exception ex)
+                {
+                }
+                finally
+                {
+                    if (client != null)
+                    {
+                        if (client.Connected)
+                        {
+                            client.Shutdown(SocketShutdown.Both);
+                        }
+                        client.Close();
+                        client.Dispose();
+                    }
+                }
 
                 /////////////////////////
                 MainWindow mainWindow = new MainWindow();
