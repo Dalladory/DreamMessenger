@@ -26,9 +26,13 @@ namespace Client.Windows
     public partial class RegistrationWindow : Window
     {
         const int PORT = 8080;
+        Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+        IPAddress ipaddress = null;
         public RegistrationWindow()
         {
             InitializeComponent();
+            IPAddress.TryParse("135.181.63.54", out ipaddress);
         }
 
 
@@ -50,18 +54,17 @@ namespace Client.Windows
                     Login = tbLogin.Text,
                     Password = pbPassword_1.Password
                 };
-                Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
-                IPAddress ipaddress = null;
-                IPAddress.TryParse("135.181.63.54", out ipaddress);
-
+                
                 try
                 {
                    
                     client.Connect(ipaddress, PORT);
                     string usertSerialized = JsonSerializer.Serialize(newUser);
-                    byte[] bufferSend = Encoding.ASCII.GetBytes("AdUser|"+usertSerialized);
+                    byte[] bufferSend = Encoding.UTF8.GetBytes("AddUser|"+usertSerialized);
                     client.Send(bufferSend);
+                    MainWindow mainWindow = new MainWindow();
+                    this.Close();
+                    mainWindow.Show();
                 }
                 catch (Exception ex)
                 {
@@ -80,9 +83,7 @@ namespace Client.Windows
                 }
 
                 /////////////////////////
-                MainWindow mainWindow = new MainWindow();
-                this.Close();
-                mainWindow.Show();
+                
 
             }
             else

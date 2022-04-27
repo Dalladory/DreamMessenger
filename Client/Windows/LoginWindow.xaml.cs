@@ -22,24 +22,25 @@ namespace Client.Windows
     public partial class LoginWindow : Window
     {
         const int PORT = 8080;
+        Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+        IPAddress ipaddress = null;
+        
         public LoginWindow()
         {
             InitializeComponent();
+            IPAddress.TryParse("135.181.63.54", out ipaddress);
         }
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(tbLogin.Text) && !string.IsNullOrEmpty(pbPassword.Password))
             {
-                Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
-                IPAddress ipaddress = null;
-                IPAddress.TryParse("135.181.63.54", out ipaddress);
-
+               
                 try
                 {
 
                     client.Connect(ipaddress, PORT);
-                    byte[] bufferSend = Encoding.ASCII.GetBytes($"SignIn|{tbEmeil.Text}/{tbLogin.Text}|{pbPassword.Password}");
+                    byte[] bufferSend = Encoding.UTF8.GetBytes($"SignIn|{tbEmeil.Text}/{tbLogin.Text}|{pbPassword.Password}");
                     client.Send(bufferSend);
                 }
                 catch (Exception ex)
