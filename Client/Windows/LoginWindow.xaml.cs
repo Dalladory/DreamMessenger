@@ -40,8 +40,12 @@ namespace Client.Windows
                 {
 
                     client.Connect(ipaddress, PORT);
-                    byte[] bufferSend = Encoding.UTF8.GetBytes($"SignIn|{tbEmeil.Text}/{tbLogin.Text}|{pbPassword.Password}");
+                    byte[] bufferSend = Encoding.UTF8.GetBytes($"SignIn|{tbLogin.Text}|{pbPassword.Password}");
                     client.Send(bufferSend);
+                    byte[] bufferRecived = new byte[1024];
+                    int recive = client.Receive(bufferRecived);
+                    string resivedData = Encoding.ASCII.GetString(bufferRecived, 0, recive);
+                    MessageBox.Show(resivedData);
                 }
                 catch (Exception ex)
                 {

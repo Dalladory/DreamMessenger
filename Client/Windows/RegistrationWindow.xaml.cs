@@ -60,11 +60,17 @@ namespace Client.Windows
                    
                     client.Connect(ipaddress, PORT);
                     string usertSerialized = JsonSerializer.Serialize(newUser);
+
                     byte[] bufferSend = Encoding.UTF8.GetBytes("AddUser|"+usertSerialized);
                     client.Send(bufferSend);
+                    byte[] bufferRecived = new byte[1024];
+                    int recive = client.Receive(bufferRecived);
+                    string resivedData = Encoding.ASCII.GetString(bufferRecived, 0, recive);
+                    MessageBox.Show(resivedData);
                     MainWindow mainWindow = new MainWindow();
                     this.Close();
                     mainWindow.Show();
+
                 }
                 catch (Exception ex)
                 {
