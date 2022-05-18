@@ -1,4 +1,5 @@
 ﻿using Base.Data.Models;
+using MaterialDesignThemes.Wpf;
 using SimpleTCP;
 using System;
 using System.Collections.Generic;
@@ -35,10 +36,39 @@ namespace Client.Windows
             IPAddress.TryParse("135.181.63.54", out ipaddress);
         }
 
+        public bool IsDarkTheme { get; set; }
+        private readonly PaletteHelper paletteHelper = new PaletteHelper();
+
+
+        private void toggleTheme(object sender, RoutedEventArgs e)
+        {
+            ITheme theme = paletteHelper.GetTheme();
+            if (IsDarkTheme = theme.GetBaseTheme() == BaseTheme.Dark)
+            {
+                IsDarkTheme = false;
+                theme.SetBaseTheme(Theme.Light);
+            }
+            else
+            {
+                IsDarkTheme = true;
+                theme.SetBaseTheme(Theme.Dark);
+            }
+            paletteHelper.SetTheme(theme);
+        }
+
+        private void exitApp(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);
+            DragMove();
+        }
 
         private void btnRegistration_Click(object sender, RoutedEventArgs e)
         {
-            if(!string.IsNullOrEmpty(tbName.Text)
+            if (!string.IsNullOrEmpty(tbName.Text)
                 && !string.IsNullOrEmpty(tbSurname.Text)
                 && !string.IsNullOrEmpty(tbEmail.Text)
                 && !string.IsNullOrEmpty(tbLogin.Text)
@@ -46,7 +76,7 @@ namespace Client.Windows
                 && pbPassword_1.Password == pbPassword_2.Password)
             {
                 //test 
-                User newUser= new User()
+                User newUser = new User()
                 {
                     Name = tbName.Text,
                     Surname = tbSurname.Text,
@@ -54,20 +84,20 @@ namespace Client.Windows
                     Login = tbLogin.Text,
                     Password = pbPassword_1.Password
                 };
-                
+
                 try
                 {
-                   
+
                     client.Connect(ipaddress, PORT);
                     string usertSerialized = JsonSerializer.Serialize(newUser);
 
-                    byte[] bufferSend = Encoding.UTF8.GetBytes("AddUser|"+usertSerialized);
+                    byte[] bufferSend = Encoding.UTF8.GetBytes("AddUser|" + usertSerialized);
                     client.Send(bufferSend);
                     byte[] bufferRecived = new byte[1024];
                     int recive = client.Receive(bufferRecived);
-                    string resivedData = Encoding.ASCII.GetString(bufferRecived, 0, recive);
+                    string resivedData = Encoding.UTF8.GetString(bufferRecived, 0, recive);
                     MessageBox.Show(resivedData);
-                    MainWindow mainWindow = new MainWindow();
+                    MainWindow mainWindow = new MainWindow(resivedData, client);
                     this.Close();
                     mainWindow.Show();
 
@@ -89,7 +119,7 @@ namespace Client.Windows
                 }
 
                 /////////////////////////
-                
+
 
             }
             else

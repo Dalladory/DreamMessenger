@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "jMD+yhrGZNHT2vMoJB3Gd5UJ/E5El/L973s82XTOzyzbMBqJ4mCqkZolhlqRztDr+pH8gfAuFiRwGmRB1EPvIQ==",
+  "dgSpecHash": "OGUT9Vka05B4BSb0VSBZctCEXlm+LMdlDt67DKnvKDd+bz94QZbJUEaDULpHbjoyBeAKIk1oaxG/tlG1/2gavQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Dell\\Desktop\\test\\Client\\Client.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Dell\\.nuget\\packages\\materialdesigncolors\\2.0.6\\materialdesigncolors.2.0.6.nupkg.sha512",
+    "C:\\Users\\Dell\\.nuget\\packages\\materialdesignthemes\\4.5.0\\materialdesignthemes.4.5.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\simpletcp\\1.0.24\\simpletcp.1.0.24.nupkg.sha512"
   ],
   "logs": [

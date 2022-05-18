@@ -13,9 +13,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MaterialDesignThemes.Wpf;
 
 namespace Client.Windows
 {
+
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
     /// </summary>
@@ -31,11 +33,41 @@ namespace Client.Windows
             InitializeComponent();
             IPAddress.TryParse("135.181.63.54", out ipaddress);
         }
+        public bool IsDarkTheme { get; set; }
+        private readonly PaletteHelper paletteHelper=new PaletteHelper();
+        
+
+        private void toggleTheme(object sender, RoutedEventArgs e)
+        {
+            ITheme theme = paletteHelper.GetTheme();
+            if (IsDarkTheme = theme.GetBaseTheme() == BaseTheme.Dark)
+            {
+                IsDarkTheme = false;
+                theme.SetBaseTheme(Theme.Light);
+            }
+            else
+            {
+                IsDarkTheme = true;
+                theme.SetBaseTheme(Theme.Dark);
+            }
+            paletteHelper.SetTheme(theme);
+        }
+
+        private void exitApp(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);
+            DragMove();
+        }
+
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(tbLogin.Text) && !string.IsNullOrEmpty(pbPassword.Password))
             {
-               
+
                 try
                 {
 
@@ -44,8 +76,17 @@ namespace Client.Windows
                     client.Send(bufferSend);
                     byte[] bufferRecived = new byte[1024];
                     int recive = client.Receive(bufferRecived);
-                    string resivedData = Encoding.ASCII.GetString(bufferRecived, 0, recive);
-                    MessageBox.Show(resivedData);
+                    string resivedData = Encoding.UTF8.GetString(bufferRecived, 0, recive);
+                    if (resivedData.Contains("true"))
+                    {
+                        MainWindow mainWindow = new MainWindow(resivedData, client);
+                        this.Close();
+                        mainWindow.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show(resivedData, "Error!!!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -63,14 +104,13 @@ namespace Client.Windows
                     }
                 }
 
-                MainWindow mainWindow = new MainWindow();
-                this.Close();
-                mainWindow.Show();
+
             }
             else
             {
                 MessageBox.Show("Error");
             }
+
         }
 
         private void btnRegistration_Click(object sender, RoutedEventArgs e)
@@ -78,6 +118,7 @@ namespace Client.Windows
             RegistrationWindow registrationWindow = new RegistrationWindow();
             this.Close();
             registrationWindow.Show();
+
         }
     }
 }

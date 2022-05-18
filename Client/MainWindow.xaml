@@ -21,8 +21,6 @@
 
 
         <TextBox Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10,5,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="25" FontSize="15"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Margin="2,474,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="26" FontSize="15" HorizontalAlignment="Left" Width="446" Grid.ColumnSpan="2"/>
-        <Button x:Name="btnSend" Content=">" Grid.Row="1" Grid.Column="2" Margin="461,474,0,0"  VerticalAlignment="Top" Height="25" FontSize="15" Grid.RowSpan="2"/>
 
 
         <ListBox x:Name="ChatList" Grid.Column="0" Grid.Row="1" Margin="5,8,5,1" VerticalAlignment="Stretch" d:ItemsSource="{d:SampleData ItemCount=5}" ScrollViewer.CanContentScroll="False">

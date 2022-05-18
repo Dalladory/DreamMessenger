@@ -61,3 +61,6 @@ C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client.pdb
 C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client.genruntimeconfig.cache
 C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\ref\Client.dll
 C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\SimpleTCP.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\MaterialDesignColors.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\App.baml
