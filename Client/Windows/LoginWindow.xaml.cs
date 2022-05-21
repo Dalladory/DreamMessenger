@@ -108,7 +108,8 @@ namespace Client.Windows
             }
             else
             {
-                MessageBox.Show("Error");
+                ErrorWindow errorWindow = new ErrorWindow("text");
+                errorWindow.Show();
             }
 
         }

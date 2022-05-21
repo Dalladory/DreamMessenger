@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Dell\Desktop\test\Client\App.xaml
-31089312486
+4-153249562
 
-52064923983
+61596830297
 1991881529891
-MainWindow.xaml;Windows\LoginWindow.xaml;Windows\RegistrationWindow.xaml;
+MainWindow.xaml;Windows\ErrorWindow.xaml;Windows\LoginWindow.xaml;Windows\RegistrationWindow.xaml;
 
 False
 

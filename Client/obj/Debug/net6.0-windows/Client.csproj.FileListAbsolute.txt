@@ -64,3 +64,5 @@ C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\SimpleTCP.dll
 C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\MaterialDesignColors.dll
 C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
 C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\App.baml
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Windows\ErrorWindow.g.cs
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Windows\ErrorWindow.baml
