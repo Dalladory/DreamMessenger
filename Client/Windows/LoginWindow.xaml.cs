@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Base.Data.Models;
 using MaterialDesignThemes.Wpf;
 
 namespace Client.Windows
@@ -24,14 +26,16 @@ namespace Client.Windows
     public partial class LoginWindow : Window
     {
         const int PORT = 8080;
-        Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+        Socket socket;
 
-        IPAddress ipaddress = null;
-        
+        IPEndPoint endPoint = new IPEndPoint(IPAddress.Parse("135.181.63.54"), 8080);
+
         public LoginWindow()
         {
             InitializeComponent();
-            IPAddress.TryParse("135.181.63.54", out ipaddress);
+            socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            //socket.Bind(endPoint);
+            socket.Connect(endPoint);
         }
         public bool IsDarkTheme { get; set; }
         private readonly PaletteHelper paletteHelper=new PaletteHelper();
@@ -67,56 +71,45 @@ namespace Client.Windows
         {
             if (!string.IsNullOrEmpty(tbLogin.Text) && !string.IsNullOrEmpty(pbPassword.Password))
             {
-
+                string serverResult = null;
                 try
                 {
-
-                    client.Connect(ipaddress, PORT);
                     byte[] bufferSend = Encoding.UTF8.GetBytes($"SignIn|{tbLogin.Text}|{pbPassword.Password}");
-                    client.Send(bufferSend);
-                    byte[] bufferRecived = new byte[1024];
-                    int recive = client.Receive(bufferRecived);
-                    string resivedData = Encoding.UTF8.GetString(bufferRecived, 0, recive);
-                    if (resivedData.Contains("true"))
-                    {
-                        MainWindow mainWindow = new MainWindow(resivedData, client);
-                        this.Close();
-                        mainWindow.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show(resivedData, "Error!!!", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
+                    socket.Send(bufferSend);
+                    byte[] bufferReceived = new byte[1024];
+                    int receiveBytesCount = socket.Receive(bufferReceived);
+                    serverResult = Encoding.UTF8.GetString(bufferReceived, 0, receiveBytesCount);
                 }
                 catch (Exception ex)
                 {
+                    MessageBox.Show(ex.Message);
+                    return;
                 }
-                finally
+
+                if (serverResult is not null && serverResult.StartsWith("true"))
                 {
-                    if (client != null)
-                    {
-                        if (client.Connected)
-                        {
-                            client.Shutdown(SocketShutdown.Both);
-                        }
-                        client.Close();
-                        client.Dispose();
-                    }
+                    //MessageBox.Show(serverResult);
+                    //int myId = int.Parse(serverResult.Split("|", 2, StringSplitOptions.RemoveEmptyEntries)[1]);
+                    User user = JsonSerializer.Deserialize<User>(serverResult.Split("|", 2, StringSplitOptions.RemoveEmptyEntries)[1]);
+                    MainWindow mainWindow = new MainWindow(socket, user);
+                    this.Close();
+                    mainWindow.Show();
                 }
-
-
+                else
+                {
+                    MessageBox.Show(serverResult);
+                }
             }
             else
             {
-                ErrorWindow errorWindow = new ErrorWindow("text");
-                errorWindow.Show();
+                MessageBox.Show("Login or password is wrong");
             }
 
         }
 
         private void btnRegistration_Click(object sender, RoutedEventArgs e)
         {
-            RegistrationWindow registrationWindow = new RegistrationWindow();
+            RegistrationWindow registrationWindow = new RegistrationWindow(socket);
             this.Close();
             registrationWindow.Show();
 

@@ -26,14 +26,12 @@ namespace Client.Windows
     /// </summary>
     public partial class RegistrationWindow : Window
     {
-        const int PORT = 8080;
-        Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
-        IPAddress ipaddress = null;
-        public RegistrationWindow()
+        Socket socket;
+        public RegistrationWindow(Socket socket)
         {
+
             InitializeComponent();
-            IPAddress.TryParse("135.181.63.54", out ipaddress);
+            this.socket = socket;
         }
 
         public bool IsDarkTheme { get; set; }
@@ -75,7 +73,7 @@ namespace Client.Windows
                 && !string.IsNullOrEmpty(pbPassword_1.Password)
                 && pbPassword_1.Password == pbPassword_2.Password)
             {
-                //test 
+
                 User newUser = new User()
                 {
                     Name = tbName.Text,
@@ -85,46 +83,41 @@ namespace Client.Windows
                     Password = pbPassword_1.Password
                 };
 
+                string serverResult = null;
                 try
                 {
+                    string userSerialized = JsonSerializer.Serialize<User>(newUser);
 
-                    client.Connect(ipaddress, PORT);
-                    string usertSerialized = JsonSerializer.Serialize(newUser);
-
-                    byte[] bufferSend = Encoding.UTF8.GetBytes("AddUser|" + usertSerialized);
-                    client.Send(bufferSend);
-                    byte[] bufferRecived = new byte[1024];
-                    int recive = client.Receive(bufferRecived);
-                    string resivedData = Encoding.UTF8.GetString(bufferRecived, 0, recive);
-                    MessageBox.Show(resivedData);
-                    MainWindow mainWindow = new MainWindow(resivedData, client);
-                    this.Close();
-                    mainWindow.Show();
-
+                    byte[] bufferSend = Encoding.UTF8.GetBytes("AddUser|" + userSerialized);
+                    socket.Send(bufferSend);
+                    byte[] bufferReceived = new byte[1024];
+                    int receiveBytesCount = socket.Receive(bufferReceived);
+                    serverResult = Encoding.UTF8.GetString(bufferReceived, 0, receiveBytesCount);
+                    MessageBox.Show(serverResult);
                 }
                 catch (Exception ex)
                 {
+                    MessageBox.Show(ex.Message);
+                    return;
                 }
-                finally
+
+                if (serverResult is not null && serverResult.StartsWith("true"))
                 {
-                    if (client != null)
-                    {
-                        if (client.Connected)
-                        {
-                            client.Shutdown(SocketShutdown.Both);
-                        }
-                        client.Close();
-                        client.Dispose();
-                    }
+                    int myId = int.Parse(serverResult.Split("|", 2, StringSplitOptions.RemoveEmptyEntries)[1]);
+                    newUser.Id = myId;
+                    MainWindow mainWindow = new MainWindow(socket, newUser);
+                    this.Close();
+                    mainWindow.Show();
                 }
-
-                /////////////////////////
-
+                else
+                {
+                    MessageBox.Show(serverResult);
+                }
 
             }
             else
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Your data is not valid");
             }
         }
     }
