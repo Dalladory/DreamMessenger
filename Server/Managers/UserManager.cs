@@ -18,7 +18,10 @@ namespace Server.Managers
             {
                 string[] arr = data.Split("|", 2, StringSplitOptions.RemoveEmptyEntries);
                 User user = UserRepository.SignIn(arr[0], arr[1]);
-                if (user == null) return "false|Login or password is wrong";
+                if (user == null)
+                {
+                    return "false|Login or password is wrong";
+                }
                 userId = user.Id;
                 return "true|" + JsonSerializer.Serialize<User>(user);
             }
