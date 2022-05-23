@@ -54,7 +54,7 @@ namespace Base.Data.Classes
         static public User SignIn(string login, string password)
         {
             AppDbContext context = new AppDbContext();
-            return context.Users.FirstOrDefault(u => u.Password == password && u.Email == login || u.Login == login);
+            return context.Users.Where(u => u.Email == login || u.Login == login).FirstOrDefault(u => u.Password == password);
         }
 
         static public List<User> SearchUsers(string text)
