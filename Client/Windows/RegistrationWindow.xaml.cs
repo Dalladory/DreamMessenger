@@ -1,4 +1,5 @@
 ﻿using Base.Data.Models;
+using MaterialDesignThemes.Wpf;
 using SimpleTCP;
 using System;
 using System.Collections.Generic;
@@ -26,24 +27,53 @@ namespace Client.Windows
     public partial class RegistrationWindow : Window
     {
         Socket socket;
-
         public RegistrationWindow(Socket socket)
         {
+
             InitializeComponent();
             this.socket = socket;
         }
 
+        public bool IsDarkTheme { get; set; }
+        private readonly PaletteHelper paletteHelper = new PaletteHelper();
+
+
+        private void toggleTheme(object sender, RoutedEventArgs e)
+        {
+            ITheme theme = paletteHelper.GetTheme();
+            if (IsDarkTheme = theme.GetBaseTheme() == BaseTheme.Dark)
+            {
+                IsDarkTheme = false;
+                theme.SetBaseTheme(Theme.Light);
+            }
+            else
+            {
+                IsDarkTheme = true;
+                theme.SetBaseTheme(Theme.Dark);
+            }
+            paletteHelper.SetTheme(theme);
+        }
+
+        private void exitApp(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);
+            DragMove();
+        }
 
         private void btnRegistration_Click(object sender, RoutedEventArgs e)
         {
-            if(!string.IsNullOrEmpty(tbName.Text)
+            if (!string.IsNullOrEmpty(tbName.Text)
                 && !string.IsNullOrEmpty(tbSurname.Text)
                 && !string.IsNullOrEmpty(tbEmail.Text)
                 && !string.IsNullOrEmpty(tbLogin.Text)
                 && !string.IsNullOrEmpty(pbPassword_1.Password)
                 && pbPassword_1.Password == pbPassword_2.Password)
             {
-               
+
                 User newUser = new User()
                 {
                     Name = tbName.Text,
@@ -71,7 +101,7 @@ namespace Client.Windows
                     return;
                 }
 
-                if(serverResult is not null && serverResult.StartsWith("true"))
+                if (serverResult is not null && serverResult.StartsWith("true"))
                 {
                     int myId = int.Parse(serverResult.Split("|", 2, StringSplitOptions.RemoveEmptyEntries)[1]);
                     newUser.Id = myId;

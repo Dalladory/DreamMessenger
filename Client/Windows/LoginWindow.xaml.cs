@@ -1,5 +1,4 @@
-﻿using Base.Data.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -15,9 +14,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Base.Data.Models;
+using MaterialDesignThemes.Wpf;
 
 namespace Client.Windows
 {
+
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
     /// </summary>
@@ -27,13 +29,42 @@ namespace Client.Windows
         Socket socket;
 
         IPEndPoint endPoint = new IPEndPoint(IPAddress.Parse("135.181.63.54"), 8080);
-        
+
         public LoginWindow()
         {
             InitializeComponent();
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             //socket.Bind(endPoint);
             socket.Connect(endPoint);
+        }
+        public bool IsDarkTheme { get; set; }
+        private readonly PaletteHelper paletteHelper=new PaletteHelper();
+        
+
+        private void toggleTheme(object sender, RoutedEventArgs e)
+        {
+            ITheme theme = paletteHelper.GetTheme();
+            if (IsDarkTheme = theme.GetBaseTheme() == BaseTheme.Dark)
+            {
+                IsDarkTheme = false;
+                theme.SetBaseTheme(Theme.Light);
+            }
+            else
+            {
+                IsDarkTheme = true;
+                theme.SetBaseTheme(Theme.Dark);
+            }
+            paletteHelper.SetTheme(theme);
+        }
+
+        private void exitApp(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);
+            DragMove();
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
@@ -54,8 +85,8 @@ namespace Client.Windows
                     MessageBox.Show(ex.Message);
                     return;
                 }
-                
-                if(serverResult is not null && serverResult.StartsWith("true"))
+
+                if (serverResult is not null && serverResult.StartsWith("true"))
                 {
                     //MessageBox.Show(serverResult);
                     //int myId = int.Parse(serverResult.Split("|", 2, StringSplitOptions.RemoveEmptyEntries)[1]);
@@ -73,6 +104,7 @@ namespace Client.Windows
             {
                 MessageBox.Show("Login or password is wrong");
             }
+
         }
 
         private void btnRegistration_Click(object sender, RoutedEventArgs e)
@@ -80,6 +112,7 @@ namespace Client.Windows
             RegistrationWindow registrationWindow = new RegistrationWindow(socket);
             this.Close();
             registrationWindow.Show();
+
         }
     }
 }

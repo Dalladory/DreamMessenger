@@ -1,5 +1,6 @@
 ﻿using Base.Data.Models;
 using Client.Windows;
+using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -44,7 +45,7 @@ namespace Client
             this.my = my;
             this.myUserId = my.Id;
             this.socket = socket;
-            
+
             StartChatPanel.Visibility = Visibility.Hidden;
 
             receiveTask = Task.Run(async () => Receive(socket, chats, out responceStr));
@@ -58,7 +59,7 @@ namespace Client
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
 
             //MessageBox.Show(strChats);
             if (strChats.StartsWith("true"))
@@ -68,7 +69,7 @@ namespace Client
                 List<Chat> receiveChats = JsonSerializer.Deserialize<List<Chat>>(strChats);
 
                 receiveChats = receiveChats.Where(c => c.Messages.Count > 0).OrderByDescending(c => c.Messages.Last().SendDate).ToList();
-                
+
 
                 foreach (Chat ch in receiveChats)
                 {
@@ -76,9 +77,38 @@ namespace Client
                     chats.Add(ch);
                 }
             }
-          
+
             ChatList.ItemsSource = chats;
 
+        }
+        public bool IsDarkTheme { get; set; }
+        private readonly PaletteHelper paletteHelper = new PaletteHelper();
+
+
+        private void toggleTheme(object sender, RoutedEventArgs e)
+        {
+            ITheme theme = paletteHelper.GetTheme();
+            if (IsDarkTheme = theme.GetBaseTheme() == BaseTheme.Dark)
+            {
+                IsDarkTheme = false;
+                theme.SetBaseTheme(Theme.Light);
+            }
+            else
+            {
+                IsDarkTheme = true;
+                theme.SetBaseTheme(Theme.Dark);
+            }
+            paletteHelper.SetTheme(theme);
+        }
+
+        private void exitApp(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);
+            DragMove();
         }
 
         private int SendTextToServer(string text, out string responce)
@@ -88,20 +118,20 @@ namespace Client
             try
             {
                 socket.Send(Encoding.UTF8.GetBytes(text));
-                
+
                 receiveTask.Wait();
                 responce = responceStr;
-                
+
                 responceStr = "";
 
                 receiveTask = Task.Run(async () => Receive(socket, chats, out responceStr));
             }
             catch (Exception ex)
             {
-                MessageBox.Show("1 " + ex.Message);   
+                MessageBox.Show("1 " + ex.Message);
             }
             return bytesCount;
-            
+
         }
 
         private void Receive(Socket _socket, ObservableCollection<Chat> _chats, out string responce)
@@ -117,7 +147,7 @@ namespace Client
                     //_asyncResult = socket.BeginReceive(buffer, 0, buffer.Length, SocketFlags.None, null, null);
                     //_socket.EndReceive(_asyncResult);
                     receiveBytesCount = _socket.Receive(buffer);
-                    if(receiveBytesCount == 0)
+                    if (receiveBytesCount == 0)
                     {
                         continue;
                     }
@@ -144,7 +174,7 @@ namespace Client
                                 AddChat(chat);
                                 break;
                             }
-                            default:
+                        default:
                             {
                                 responce = result;
                                 return;
@@ -156,8 +186,8 @@ namespace Client
                     MessageBox.Show("Receive " + ex.Message);
                     //continue;
                 }
-               
-            }        
+
+            }
         }
 
         private void AddMessageToChat(Message message)
@@ -191,16 +221,18 @@ namespace Client
         {
             //MessageBox.Show(SearchTb.Text);
             MessagesZoneUpdate(Visibility.Hidden);
-            StartChatPanel.Visibility= Visibility.Hidden;
+            StartChatPanel.Visibility = Visibility.Hidden;
+            ChatList.Visibility = Visibility.Hidden;
             if (UsersList.Visibility != Visibility.Visible)
-            { 
-                UsersList.Visibility = Visibility.Visible; 
+            {
+                UsersList.Visibility = Visibility.Visible;
             }
 
             if (string.IsNullOrEmpty(SearchTb.Text))
             {
                 UsersList.ItemsSource = null;
                 UsersList.Visibility = Visibility.Hidden;
+                ChatList.Visibility = Visibility.Visible;
                 return;
             }
 
@@ -214,10 +246,10 @@ namespace Client
                 MessageBox.Show(ex.Message);
             }
             //MessageBox.Show(usersResponce);
-            
-            if(usersResponce.StartsWith("true|"))
+
+            if (usersResponce.StartsWith("true|"))
             {
-                
+
                 UsersList.ItemsSource = JsonSerializer.Deserialize<List<User>>(usersResponce.Split("|", 2, StringSplitOptions.RemoveEmptyEntries)[1]);
             }
         }
@@ -235,7 +267,7 @@ namespace Client
             MessagesZoneUpdate(Visibility.Visible);
             if (ChatList.SelectedItem == null) return;
             MessagesList.ItemsSource = ((Chat)ChatList.SelectedItem).Messages;
-            if(((Chat)ChatList.SelectedItem).Messages.Count > 0)
+            if (((Chat)ChatList.SelectedItem).Messages.Count > 0)
             {
                 MessagesList.ScrollIntoView(((Chat)ChatList.SelectedItem).Messages.Last());
             }
@@ -247,7 +279,7 @@ namespace Client
             if (UsersList.SelectedItem == null) return;
 
             Chat chat = chats.FirstOrDefault(c => c.CreatorId == ((User)UsersList.SelectedItem).Id || c.CompanionId == ((User)UsersList.SelectedItem).Id);
-            if(chat == null)
+            if (chat == null)
             {
                 MessagesZoneUpdate(Visibility.Hidden);
 
@@ -268,15 +300,15 @@ namespace Client
                 MessagesList.ItemsSource = chat.Messages;
                 CompanionProfileBtn.Content = chat.Companion.FullName;
             }
-            
-            
+
+
         }
 
         private void YStartChatBtn_Click(object sender, RoutedEventArgs e)
         {
             StartChatPanel.Visibility = Visibility.Hidden;
             //MessageBox.Show(((User)UsersList.SelectedItem).Id.ToString());
-            
+
 
             Chat chat = new Chat()
             {
@@ -298,7 +330,7 @@ namespace Client
                 MessageBox.Show(ex.Message);
             }
 
-            if(result.StartsWith("true"))
+            if (result.StartsWith("true"))
             {
                 chat.Id = int.Parse(result.Replace("true|", ""));
                 //chat.Creator = my;
@@ -325,7 +357,7 @@ namespace Client
 
         private void MsgSendBtn_Click(object sender, RoutedEventArgs e)
         {
-            if(string.IsNullOrEmpty(MessageTb.Text))
+            if (string.IsNullOrEmpty(MessageTb.Text))
             {
                 return;
             }
@@ -362,12 +394,12 @@ namespace Client
             //((Chat)ChatList.SelectedItem).Messages.Add(message);
             //int selectedIndex = ChatList.SelectedIndex;
             //ChatList.ItemsSource = null;
-            
+
             //ChatList.ItemsSource = chats;
             //ChatList.SelectedIndex = selectedIndex;
-            
+
             MessageTb.Text = "";
-            
+
 
         }
     }

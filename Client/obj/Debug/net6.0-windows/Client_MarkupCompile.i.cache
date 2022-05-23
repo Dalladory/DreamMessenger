@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\c-sharp project\DreamMessenger\Client\App.xaml
-4521503552
+4-153249562
 
-8-1151293057
-21671312651
-MainWindow.xaml;Windows\CompanionProfileWindow.xaml;Windows\LoginWindow.xaml;Windows\RegistrationWindow.xaml;
+8-315022354
+219-1968764097
+MainWindow.xaml;Windows\ErrorWindow.xaml;Windows\LoginWindow.xaml;Windows\RegistrationWindow.xaml;
 
 True
 

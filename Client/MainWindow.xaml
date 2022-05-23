@@ -4,11 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="" Height="550" Width="1000">
-    <Grid>
+        Title="" Height="550" Width="1000"
+         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{x:Null}">
+    <Grid Width="Auto" Background="{DynamicResource MaterialDesignPaper}" materialDesign:ShadowAssist.ShadowDepth="Depth4">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="500"></ColumnDefinition>
+            <ColumnDefinition Width="0.65*"></ColumnDefinition>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
@@ -23,15 +26,24 @@
         <TextBox x:Name="SearchTb" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10,5,10,3" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="25" FontSize="15" TextChanged="SearchTb_TextChanged"/>
         <TextBox x:Name="MessageTb" Grid.Row="1" Grid.Column="2" Margin="5,0,120,3" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Height="25" FontSize="15" HorizontalAlignment="Stretch"/>
         <Button x:Name="MsgSendBtn" Content="Send" Grid.Row="1" Grid.Column="2" Margin="0,0,8,3"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="25" FontSize="15" Width="100" Click="MsgSendBtn_Click"/>
-        <Button x:Name="CompanionProfileBtn" Grid.Column="2" Grid.Row="0" Padding="15,5,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Click="CompanionProfileBtn_Click">Full Name</Button>
-
+        <Button x:Name="CompanionProfileBtn" Grid.Column="2" Grid.Row="0" Padding="15,5,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Margin="0,0,35,0" Click="CompanionProfileBtn_Click">Full Name</Button>
+        <materialDesign:PopupBox HorizontalAlignment="Right"  PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Height="25" Grid.Column="2">
+            <StackPanel>
+                <StackPanel Margin="16 10 0 6" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock VerticalAlignment="Center" Text="Dark Mode"/>
+                    <ToggleButton Cursor="Hand" ToolTip="Enable Dark Mode" Margin="12 0 8 0" x:Name="themeToggle" IsChecked="{Binding IsDarkTheme}" Click="toggleTheme"/>
+                </StackPanel>
+                <Button ToolTip="Having Trouble Logging In!" Margin="0 8 0 0" Content="Help Me"/>
+                <Button x:Name="btn_exit" ToolTip="Close Application" Content="Exit Application" Click="exitApp"/>
+            </StackPanel>
+        </materialDesign:PopupBox>
         <!--<Image Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left" Height="25" Margin="5,5,0,0" VerticalAlignment="Top" Width="25"/>-->
 
 
 
 
 
-        <StackPanel x:Name="StartChatPanel" Orientation="Vertical" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel x:Name="StartChatPanel" Orientation="Vertical" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
             <Label x:Name="StartChatLb" Grid.Column="2" Content="Start new Chat?" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center"/>
             <StackPanel Orientation="Horizontal" Margin="50,0,0,0">
                 <Button x:Name="YStartChatBtn" Grid.Column="2" Content="Yes" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Click="YStartChatBtn_Click"/>
@@ -40,8 +52,13 @@
         </StackPanel>
 
         
-        
-        <ListBox x:Name="ChatList" Grid.Column="0" Grid.Row="1" Margin="5,8,5,1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ChatList_SelectionChanged" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+        <ListBox x:Name="ChatList" Grid.Column="0" Grid.Row="1" Margin="5,8,5,1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ChatList_SelectionChanged" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Width="Auto">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                </Style>
+            </ListBox.ItemContainerStyle>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -51,17 +68,18 @@
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
-                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Image Source="D:\c-sharp project\DreamMessenger\Client\Img\avatar.jpg" Grid.RowSpan="2" Grid.Column="0" Width="40" Height="40" HorizontalAlignment="Left" Margin="0,0,8,0"></Image>
-                        <TextBlock x:Name="ChatHeaderTb" Text="{Binding Companion.FullName}" Grid.Row="0" Grid.Column="1"></TextBlock>
-                        <TextBlock x:Name="ChatLastMsgTb" Text="{Binding LastMsg}" Grid.Row="1" Grid.Column="1" Width="Auto"></TextBlock>
-                        <TextBlock x:Name="LastMsgTimeSendTb" Text="{Binding LastMsgDateStr}" Grid.Row="0" Grid.Column="2" Width="Auto" HorizontalAlignment="Right" Margin="270,0,0,0"/>
+                        <Image Source="\Images\avatar.png" Grid.RowSpan="2" Grid.Column="0" Width="40" Height="40" HorizontalAlignment="Left" Margin="0,0,8,0"></Image>
+                        <TextBlock x:Name="ChatHeaderTb" Text="{Binding Companion.FullName}" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch"></TextBlock>
+                        <TextBlock x:Name="ChatLastMsgTb" Text="{Binding LastMsg}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left"></TextBlock>
+                        <TextBlock x:Name="LastMsgTimeSendTb" Text="{Binding LastMsgDateStr}" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+
 
         <ListBox x:Name="UsersList" Grid.Column="0" Grid.Row="1" Margin="5,8,5,1" VerticalAlignment="Stretch" d:ItemsSource="{d:SampleData ItemCount=5}" ScrollViewer.CanContentScroll="False" Visibility="Hidden" SelectionChanged="UsersList_SelectionChanged">
             <ListBox.ItemTemplate>
@@ -75,7 +93,7 @@
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Image Source="D:\c-sharp project\DreamMessenger\Client\Img\avatar.jpg" Grid.RowSpan="2" Grid.Column="0" Width="40" Height="40" HorizontalAlignment="Left" Margin="0,0,8,0"></Image>
+                        <Image Source="\Images\avatar.png" Grid.RowSpan="2" Grid.Column="0" Width="40" Height="40" HorizontalAlignment="Left" Margin="0,0,8,0"></Image>
                         <TextBlock x:Name="FullNameTb" Text="{Binding FullName}" Grid.Row="0" Grid.Column="1"></TextBlock>
                         <TextBlock Text="@" Grid.Row="1" Grid.Column="1"></TextBlock>
                         <TextBlock x:Name="LoginTb" Text="{Binding Login}" Grid.Row="1" Grid.Column="1" Margin="10,0,0,0"></TextBlock>
@@ -97,12 +115,12 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Image Source="D:\c-sharp project\DreamMessenger\Client\Img\avatar.jpg" Grid.RowSpan="2" Grid.Column="0" Width="30" Height="30" HorizontalAlignment="Left" Margin="0,0,8,0"></Image>
+                        <Image Source="\Images\avatar.png" Grid.RowSpan="2" Grid.Column="0" Width="30" Height="30" HorizontalAlignment="Left" Margin="0,0,8,0"></Image>
 
                         <TextBlock x:Name="Text" Text="{Binding Text}" Grid.Row="0" Grid.Column="1" MaxWidth="400" TextWrapping="Wrap"></TextBlock>
                         <TextBlock x:Name="SendDate" Text="{Binding SendDateStr}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right"></TextBlock>
-                        
-        
+
+
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

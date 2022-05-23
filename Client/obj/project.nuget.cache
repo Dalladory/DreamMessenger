@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "YKSvj+sfNvNHNkR5ZFlzIfCz0ARkGDzDLDC0qMDFBgLwJDoEx9LzyjCqOqT6WnGrhL8v1f0G7pPd74S1moTOsw==",
+  "dgSpecHash": "VzsgvGkNE3SL6gMk1EKt4pvcIoaH57P04zhoNbuItBB8NwAzLbyfw6DsJOZ+2c6IAegl3Afr7AR7sJeyXomANg==",
   "success": true,
   "projectFilePath": "D:\\c-sharp project\\DreamMessenger\\Client\\Client.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\materialdesigncolors\\2.0.6\\materialdesigncolors.2.0.6.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\materialdesignthemes\\4.5.0\\materialdesignthemes.4.5.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
