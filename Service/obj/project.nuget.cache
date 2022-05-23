@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5yxLQhik1EZtBdS2uq2oOwTSO7nwn65zUSMi11hpRG4zp5mExPAJtCd0wN/XNrWTIDMuNH2fG9skqOuc/mfN/Q==",
+  "dgSpecHash": "m0hOVAjXoINwfV3P1zojT12aGBgaQ1uCunEyHgpn9v3FGeSUZ4rOZRbnmdlHJB3A4MFMHWREwdI0z3nn88OHDA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dell\\Desktop\\DreamMessenger-FirsWorkedVersion\\DreamMessenger-FirsWorkedVersion\\Service\\Service.csproj",
+  "projectFilePath": "C:\\Users\\Dell\\Desktop\\test\\Service\\Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

@@ -1808,11 +1808,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dell\\Desktop\\DreamMessenger-FirsWorkedVersion\\DreamMessenger-FirsWorkedVersion\\Service\\Service.csproj",
+      "projectUniqueName": "C:\\Users\\Dell\\Desktop\\test\\Service\\Service.csproj",
       "projectName": "Service",
-      "projectPath": "C:\\Users\\Dell\\Desktop\\DreamMessenger-FirsWorkedVersion\\DreamMessenger-FirsWorkedVersion\\Service\\Service.csproj",
+      "projectPath": "C:\\Users\\Dell\\Desktop\\test\\Service\\Service.csproj",
       "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dell\\Desktop\\DreamMessenger-FirsWorkedVersion\\DreamMessenger-FirsWorkedVersion\\Service\\obj\\",
+      "outputPath": "C:\\Users\\Dell\\Desktop\\test\\Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1829,11 +1829,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Dell\\Desktop\\DreamMessenger-FirsWorkedVersion\\DreamMessenger-FirsWorkedVersion\\Base\\Base.csproj": {
-              "projectPath": "C:\\Users\\Dell\\Desktop\\DreamMessenger-FirsWorkedVersion\\DreamMessenger-FirsWorkedVersion\\Base\\Base.csproj"
+            "C:\\Users\\Dell\\Desktop\\test\\Base\\Base.csproj": {
+              "projectPath": "C:\\Users\\Dell\\Desktop\\test\\Base\\Base.csproj"
             },
-            "C:\\Users\\Dell\\Desktop\\DreamMessenger-FirsWorkedVersion\\DreamMessenger-FirsWorkedVersion\\Server\\Server.csproj": {
-              "projectPath": "C:\\Users\\Dell\\Desktop\\DreamMessenger-FirsWorkedVersion\\DreamMessenger-FirsWorkedVersion\\Server\\Server.csproj"
+            "C:\\Users\\Dell\\Desktop\\test\\Server\\Server.csproj": {
+              "projectPath": "C:\\Users\\Dell\\Desktop\\test\\Server\\Server.csproj"
             }
           }
         }

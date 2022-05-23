@@ -222,6 +222,7 @@ namespace Client
             //MessageBox.Show(SearchTb.Text);
             MessagesZoneUpdate(Visibility.Hidden);
             StartChatPanel.Visibility = Visibility.Hidden;
+            ChatList.Visibility = Visibility.Hidden;
             if (UsersList.Visibility != Visibility.Visible)
             {
                 UsersList.Visibility = Visibility.Visible;
@@ -231,6 +232,7 @@ namespace Client
             {
                 UsersList.ItemsSource = null;
                 UsersList.Visibility = Visibility.Hidden;
+                ChatList.Visibility = Visibility.Visible;
                 return;
             }
 
