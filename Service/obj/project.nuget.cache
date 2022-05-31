@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Z7VPi64CzRAIC49a0u0/FJcG5puWSmP6tahQD7WdSNIWHZ3uk11FcuK62DwlNV8PHAzIQKGGtqjFarLESAmADA==",
+  "dgSpecHash": "RwbVfd8+hYg7ywvrAFsoAeIifTT80TDm8ECjbts6RpE2yHx4Cmxz9o31rKZsdgGO/TXO8Y0q/Y5IUXAd/oWpIw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Service\\Service.csproj",
+  "projectFilePath": "C:\\Users\\PC10\\Desktop\\DreamMessenger-FirsWorkedVersion\\Service\\Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC10\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\PC10\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

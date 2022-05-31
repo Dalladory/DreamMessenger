@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "Service/1.0.0": {
         "dependencies": {
-          "Base": "1.0.0"
+          "Base": "1.0.0",
+          "Server": "1.0.0"
         },
         "runtime": {
           "Service.dll": {}
@@ -463,6 +464,14 @@
         "runtime": {
           "Base.dll": {}
         }
+      },
+      "Server/1.0.0": {
+        "dependencies": {
+          "Base": "1.0.0"
+        },
+        "runtime": {
+          "Server.dll": {}
+        }
       }
     }
   },
@@ -753,6 +762,11 @@
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
     "Base/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Server/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

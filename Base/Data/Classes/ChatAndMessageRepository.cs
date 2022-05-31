@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.ObjectModel;
 
 namespace Base.Data.Classes
 {
@@ -13,7 +15,7 @@ namespace Base.Data.Classes
         static public void CreateChat(Chat chat)
         {
             AppDbContext context = new AppDbContext();
-            context.Add(chat);
+            context.Chats.Add(chat);
             context.SaveChanges();
         }
 
@@ -62,6 +64,25 @@ namespace Base.Data.Classes
             AppDbContext context = new AppDbContext();
             context.Add(message);
             context.SaveChanges();
+        }
+
+        
+
+        static public List<Chat> GetUserChats(int userId)
+        {
+            AppDbContext context = new AppDbContext();
+
+            List<Chat> chats = context.Chats.Where(c => c.CreatorId == userId || c.CompanionId == userId).Include(u => u.Companion).Include(u => u.Creator).Include(u => u.Messages).ToList();
+            foreach (Chat chat in chats)
+            {
+                if(chat.CreatorId != userId)
+                {
+                    User temp = chat.Companion;
+                    chat.Companion = chat.Creator;
+                    chat.Creator = temp;
+                }
+            }
+            return chats;
         }
     }
 }

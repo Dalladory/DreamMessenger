@@ -25,7 +25,7 @@ public class ChatAndMessageService
         {
             try
             {
-            ChatAndMessageRepository.SendMessage(message);
+                ChatAndMessageRepository.SendMessage(message);
             }
             catch (Exception ex)
             {

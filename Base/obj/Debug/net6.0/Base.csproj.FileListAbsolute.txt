@@ -24,3 +24,19 @@ C:\Users\PC10\Desktop\Git Hub\TeamProject\Base\obj\Debug\net6.0\Base.pdb
 C:\Users\PC10\Desktop\Git Hub\TeamProject\Base\obj\Debug\net6.0\ref\Base.dll
 C:\Users\PC10\Desktop\Git Hub\TeamProject\Base\bin\Debug\net6.0\Base.runtimeconfig.json
 C:\Users\PC10\Desktop\Git Hub\TeamProject\Base\obj\Debug\net6.0\Base.genruntimeconfig.cache
+D:\c-sharp project\DreamMessenger\Base\bin\Debug\net6.0\Base.runtimeconfig.json
+D:\c-sharp project\DreamMessenger\Base\obj\Debug\net6.0\Base.genruntimeconfig.cache
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Base\bin\Debug\net6.0\Base.deps.json
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Base\bin\Debug\net6.0\Base.runtimeconfig.json
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Base\bin\Debug\net6.0\Base.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Base\bin\Debug\net6.0\Base.pdb
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Base\obj\Debug\net6.0\Base.csproj.AssemblyReference.cache
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Base\obj\Debug\net6.0\Base.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Base\obj\Debug\net6.0\Base.AssemblyInfoInputs.cache
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Base\obj\Debug\net6.0\Base.AssemblyInfo.cs
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Base\obj\Debug\net6.0\Base.csproj.CoreCompileInputs.cache
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Base\obj\Debug\net6.0\Base.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Base\obj\Debug\net6.0\refint\Base.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Base\obj\Debug\net6.0\Base.pdb
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Base\obj\Debug\net6.0\Base.genruntimeconfig.cache
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Base\obj\Debug\net6.0\ref\Base.dll

@@ -49,13 +49,13 @@ public class UserService
         return null;
     }
 
-    public void AddUser(User user)
+    public static void AddUser(User user)
     {
         try
         {
             UserRepository.AddUser(user);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             // Some info to status bar or somewhere
         }
@@ -86,9 +86,9 @@ public class UserService
         }
     }
 
-    public bool IsValidCredentials(string login, string password)
+    public static User SignIn(string login, string password)
     {
-        return UserRepository.IsValidCredentials(login, password);
+        return UserRepository.SignIn(login, password);
     }
 
 }

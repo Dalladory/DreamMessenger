@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Base.Data.Classes
 {
@@ -50,18 +51,16 @@ namespace Base.Data.Classes
             context.SaveChanges();
         }
 
-        static public bool IsValidCredentials(string login, string password)
+        static public User SignIn(string login, string password)
         {
             AppDbContext context = new AppDbContext();
-            var user = context.Users.Where(l => l.Login == login).FirstOrDefault();
-            if (user != null)
-            {
-                if (user.Password == password)
-                {
-                    return true;
-                }
-            }
-            return false;
+            return context.Users.Where(u => u.Email == login || u.Login == login).FirstOrDefault(u => u.Password == password);
+        }
+
+        static public List<User> SearchUsers(string text)
+        {
+            AppDbContext context = new AppDbContext();
+            return context.Users.Where(u => (u.Login + " " + u.Name + " " + u.Surname).Contains(text)).ToList();
         }
     }
 }
