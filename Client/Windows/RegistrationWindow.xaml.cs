@@ -38,6 +38,27 @@ namespace Client.Windows
         private readonly PaletteHelper paletteHelper = new PaletteHelper();
 
 
+        bool ResponceParse(string serverMessage, out string ErrorMessage)
+        {
+            if (serverMessage is not null)
+            {
+                if (serverMessage.StartsWith("true"))
+                {
+                    ErrorMessage = serverMessage;
+                    return true;
+                }
+                else
+                {
+                    ErrorMessage = serverMessage.Trim('f', 'a', 'l', 's', 'e', '|');
+                    return false;
+                }
+            }
+            else
+                ErrorMessage = null;
+                return false;
+
+        }
+
         private void toggleTheme(object sender, RoutedEventArgs e)
         {
             ITheme theme = paletteHelper.GetTheme();
@@ -93,15 +114,15 @@ namespace Client.Windows
                     byte[] bufferReceived = new byte[1024];
                     int receiveBytesCount = socket.Receive(bufferReceived);
                     serverResult = Encoding.UTF8.GetString(bufferReceived, 0, receiveBytesCount);
-                    MessageBox.Show(serverResult);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    ErrorWindow error = new ErrorWindow(ex.Message);
+                    error.Show();
                     return;
                 }
 
-                if (serverResult is not null && serverResult.StartsWith("true"))
+                if (ResponceParse(serverResult,out serverResult))
                 {
                     int myId = int.Parse(serverResult.Split("|", 2, StringSplitOptions.RemoveEmptyEntries)[1]);
                     newUser.Id = myId;
@@ -111,14 +132,24 @@ namespace Client.Windows
                 }
                 else
                 {
-                    MessageBox.Show(serverResult);
+                    ErrorWindow error = new ErrorWindow(serverResult);
+                    error.ShowDialog();
                 }
 
             }
             else
             {
-                MessageBox.Show("Your data is not valid");
+                ErrorWindow error = new ErrorWindow("Some fields is empty","DATA ERROR");
+                error.ShowDialog();
             }
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            this.Close();
+            
         }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC10\\Desktop\\DreamMessenger-FirsWorkedVersion\\Client\\Client.csproj": {}
+    "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Client\\Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC10\\Desktop\\DreamMessenger-FirsWorkedVersion\\Base\\Base.csproj": {
+    "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Base\\Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC10\\Desktop\\DreamMessenger-FirsWorkedVersion\\Base\\Base.csproj",
+        "projectUniqueName": "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Base\\Base.csproj",
         "projectName": "Base",
-        "projectPath": "C:\\Users\\PC10\\Desktop\\DreamMessenger-FirsWorkedVersion\\Base\\Base.csproj",
+        "projectPath": "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Base\\Base.csproj",
         "packagesPath": "C:\\Users\\PC10\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC10\\Desktop\\DreamMessenger-FirsWorkedVersion\\Base\\obj\\",
+        "outputPath": "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Base\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -80,14 +80,14 @@
         }
       }
     },
-    "C:\\Users\\PC10\\Desktop\\DreamMessenger-FirsWorkedVersion\\Client\\Client.csproj": {
+    "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Client\\Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC10\\Desktop\\DreamMessenger-FirsWorkedVersion\\Client\\Client.csproj",
+        "projectUniqueName": "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Client\\Client.csproj",
         "projectName": "Client",
-        "projectPath": "C:\\Users\\PC10\\Desktop\\DreamMessenger-FirsWorkedVersion\\Client\\Client.csproj",
+        "projectPath": "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Client\\Client.csproj",
         "packagesPath": "C:\\Users\\PC10\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC10\\Desktop\\DreamMessenger-FirsWorkedVersion\\Client\\obj\\",
+        "outputPath": "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -108,11 +108,11 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\PC10\\Desktop\\DreamMessenger-FirsWorkedVersion\\Base\\Base.csproj": {
-                "projectPath": "C:\\Users\\PC10\\Desktop\\DreamMessenger-FirsWorkedVersion\\Base\\Base.csproj"
+              "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Base\\Base.csproj": {
+                "projectPath": "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Base\\Base.csproj"
               },
-              "C:\\Users\\PC10\\Desktop\\DreamMessenger-FirsWorkedVersion\\Server\\Server.csproj": {
-                "projectPath": "C:\\Users\\PC10\\Desktop\\DreamMessenger-FirsWorkedVersion\\Server\\Server.csproj"
+              "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Server\\Server.csproj": {
+                "projectPath": "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Server\\Server.csproj"
               }
             }
           }
@@ -158,14 +158,14 @@
         }
       }
     },
-    "C:\\Users\\PC10\\Desktop\\DreamMessenger-FirsWorkedVersion\\Server\\Server.csproj": {
+    "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC10\\Desktop\\DreamMessenger-FirsWorkedVersion\\Server\\Server.csproj",
+        "projectUniqueName": "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "C:\\Users\\PC10\\Desktop\\DreamMessenger-FirsWorkedVersion\\Server\\Server.csproj",
+        "projectPath": "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Server\\Server.csproj",
         "packagesPath": "C:\\Users\\PC10\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC10\\Desktop\\DreamMessenger-FirsWorkedVersion\\Server\\obj\\",
+        "outputPath": "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -186,8 +186,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\PC10\\Desktop\\DreamMessenger-FirsWorkedVersion\\Base\\Base.csproj": {
-                "projectPath": "C:\\Users\\PC10\\Desktop\\DreamMessenger-FirsWorkedVersion\\Base\\Base.csproj"
+              "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Base\\Base.csproj": {
+                "projectPath": "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Base\\Base.csproj"
               }
             }
           }

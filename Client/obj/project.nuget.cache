@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BdQkkKn00osAc4XrwQkdbghcdlpIe+ag03WziG5gzEaJT0PvE87BbiKqn8xnOSB9zYoudZY1o0zrusczL843GA==",
+  "dgSpecHash": "vfgOL2VVaXwhZu7UttNKJpExl5Cww+NQU959YoBVLBP026GhxaVf+YiT4TFQtGuoznd23AMPSxkWxeLIowwhGQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC10\\Desktop\\DreamMessenger-FirsWorkedVersion\\Client\\Client.csproj",
+  "projectFilePath": "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Client\\Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC10\\.nuget\\packages\\materialdesigncolors\\2.0.6\\materialdesigncolors.2.0.6.nupkg.sha512",
     "C:\\Users\\PC10\\.nuget\\packages\\materialdesignthemes\\4.5.0\\materialdesignthemes.4.5.0.nupkg.sha512",

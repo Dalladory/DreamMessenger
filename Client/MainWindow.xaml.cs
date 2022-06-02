@@ -420,8 +420,8 @@ namespace Client
                     MessageBox.Show("Shift + Enter pressed");
                 }
             }
-            //e.Handled = true;
-            //Send();
+            e.Handled = true;
+            Send();
 
         }
     }

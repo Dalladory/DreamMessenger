@@ -35,5 +35,6 @@ namespace Client.Windows
         {
             this.Close();
         }
+
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zAFozw9MwFPf6JJjOvFwW9jPkX3Mht5OjbL8SWo0I2bh7D3VV+N6J86BN5N1M86dbJpxVY1CaBdioVF3wN1Gig==",
+  "dgSpecHash": "TlHqqwL6DMLmQbFnp2PNLlZ/dawrY/YhDXTXQHkplCfct3jQuF/zrFc6XEcUfcflP2vp1UJ98bHKSwhnA8IZPA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC10\\Desktop\\DreamMessenger-FirsWorkedVersion\\Base\\Base.csproj",
+  "projectFilePath": "C:\\Users\\PC10\\Desktop\\Git Hub\\TeamProject\\Base\\Base.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC10\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\PC10\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
