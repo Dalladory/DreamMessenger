@@ -27,3 +27,244 @@ D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Server.dll
 D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Base.pdb
 D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Server.pdb
 D:\c-sharp project\DreamMessenger\Client\obj\Debug\net6.0-windows\Client.csproj.CopyComplete
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Server.deps.json
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Server.runtimeconfig.json
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Server.exe
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Client.exe
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Client.deps.json
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Client.runtimeconfig.json
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Client.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Client.pdb
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Base.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Server.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Base.pdb
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Server.pdb
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client.csproj.AssemblyReference.cache
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Windows\LoginWindow.g.cs
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Windows\RegistrationWindow.g.cs
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client_MarkupCompile.cache
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client_MarkupCompile.lref
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Windows\LoginWindow.baml
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Windows\RegistrationWindow.baml
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client.g.resources
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client.AssemblyInfoInputs.cache
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client.AssemblyInfo.cs
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client.csproj.CopyComplete
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client.dll
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\refint\Client.dll
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client.pdb
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Client.genruntimeconfig.cache
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\ref\Client.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\SimpleTCP.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\MaterialDesignColors.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\App.baml
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Windows\ErrorWindow.g.cs
+C:\Users\Dell\Desktop\test\Client\obj\Debug\net6.0-windows\Windows\ErrorWindow.baml
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Microsoft.Identity.Client.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\System.Runtime.Caching.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Dell\Desktop\test\Client\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\MaterialDesignColors.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Microsoft.Data.SqlClient.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Memory.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Microsoft.Identity.Client.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Logging.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\SimpleTCP.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\System.IdentityModel.Tokens.Jwt.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\System.Runtime.Caching.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\c-sharp project\DreamMessenger\Client\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\c-sharp project\DreamMessenger\Client\obj\Debug\net6.0-windows\Windows\ErrorWindow.g.cs
+D:\c-sharp project\DreamMessenger\Client\obj\Debug\net6.0-windows\Windows\LoginWindow.g.cs
+D:\c-sharp project\DreamMessenger\Client\obj\Debug\net6.0-windows\Windows\RegistrationWindow.g.cs
+D:\c-sharp project\DreamMessenger\Client\obj\Debug\net6.0-windows\App.baml
+D:\c-sharp project\DreamMessenger\Client\obj\Debug\net6.0-windows\Windows\ErrorWindow.baml
+D:\c-sharp project\DreamMessenger\Client\obj\Debug\net6.0-windows\Windows\LoginWindow.baml
+D:\c-sharp project\DreamMessenger\Client\obj\Debug\net6.0-windows\Windows\RegistrationWindow.baml
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Client.exe
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Client.deps.json
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Client.runtimeconfig.json
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Client.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Client.pdb
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\MaterialDesignColors.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Microsoft.Identity.Client.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\SimpleTCP.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\System.Runtime.Caching.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Base.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\bin\Debug\net6.0-windows\Base.pdb
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\Client.csproj.AssemblyReference.cache
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\Windows\ErrorWindow.g.cs
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\Windows\LoginWindow.g.cs
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\Windows\RegistrationWindow.g.cs
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\Client_MarkupCompile.cache
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\Client_MarkupCompile.lref
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\App.baml
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\Windows\ErrorWindow.baml
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\Windows\LoginWindow.baml
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\Windows\RegistrationWindow.baml
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\Client.g.resources
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\Client.AssemblyInfoInputs.cache
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\Client.AssemblyInfo.cs
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\Client.csproj.CoreCompileInputs.cache
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\Client.csproj.CopyComplete
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\Client.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\refint\Client.dll
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\Client.pdb
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\Client.genruntimeconfig.cache
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\ref\Client.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Server.deps.json
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Server.runtimeconfig.json
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Server.exe
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Client.exe
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Client.deps.json
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Client.runtimeconfig.json
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Client.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Client.pdb
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\MaterialDesignColors.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Microsoft.Identity.Client.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\SimpleTCP.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\System.Runtime.Caching.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Base.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Server.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Base.pdb
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\bin\Debug\net6.0-windows\Server.pdb
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\Client.csproj.AssemblyReference.cache
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\Windows\ErrorWindow.g.cs
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\Windows\LoginWindow.g.cs
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\Windows\RegistrationWindow.g.cs
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\Client_MarkupCompile.cache
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\Client_MarkupCompile.lref
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\App.baml
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\Windows\ErrorWindow.baml
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\Windows\LoginWindow.baml
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\Windows\RegistrationWindow.baml
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\Client.g.resources
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\Client.AssemblyInfoInputs.cache
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\Client.AssemblyInfo.cs
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\Client.csproj.CoreCompileInputs.cache
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\Client.csproj.CopyComplete
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\Client.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\refint\Client.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\Client.pdb
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\Client.genruntimeconfig.cache
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\ref\Client.dll
+C:\Users\PC10\Desktop\Git Hub\TeamProject\Client\obj\Debug\net6.0-windows\Client_Content.g.cs
+D:\c-sharp project\DreamMessenger\Client\obj\Debug\net6.0-windows\Client_Content.g.cs
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\Client_Content.g.cs

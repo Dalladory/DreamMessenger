@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\c-sharp project\DreamMessenger\Client\obj\Debug\net6.0-windows\
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\obj\Debug\net6.0-windows\
 Client
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\c-sharp project\DreamMessenger\Client\App.xaml
-11407045341
-
-3-1233169557
-196488468985
-MainWindow.xaml;
+C:\Users\PC10\Desktop\DreamMessenger-FirsWorkedVersion\Client\App.xaml
+4-153249562
+1-536531174
+71604975684
+21892355225
+MainWindow.xaml;Windows\ErrorWindow.xaml;Windows\LoginWindow.xaml;Windows\RegistrationWindow.xaml;
 
 False
 
