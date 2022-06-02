@@ -37,28 +37,6 @@ namespace Client.Windows
         public bool IsDarkTheme { get; set; }
         private readonly PaletteHelper paletteHelper = new PaletteHelper();
 
-
-        bool ResponceParse(string serverMessage, out string ErrorMessage)
-        {
-            if (serverMessage is not null)
-            {
-                if (serverMessage.StartsWith("true"))
-                {
-                    ErrorMessage = serverMessage;
-                    return true;
-                }
-                else
-                {
-                    ErrorMessage = serverMessage.Trim('f', 'a', 'l', 's', 'e', '|');
-                    return false;
-                }
-            }
-            else
-                ErrorMessage = null;
-                return false;
-
-        }
-
         private void toggleTheme(object sender, RoutedEventArgs e)
         {
             ITheme theme = paletteHelper.GetTheme();
@@ -91,9 +69,13 @@ namespace Client.Windows
                 && !string.IsNullOrEmpty(tbSurname.Text)
                 && !string.IsNullOrEmpty(tbEmail.Text)
                 && !string.IsNullOrEmpty(tbLogin.Text)
-                && !string.IsNullOrEmpty(pbPassword_1.Password)
-                && pbPassword_1.Password == pbPassword_2.Password)
+                && !string.IsNullOrEmpty(pbPassword_1.Password))
             {
+                if(pbPassword_1.Password != pbPassword_2.Password)
+                {
+                    new ErrorWindow("The passwords don't match").ShowDialog();
+                    return;
+                }
 
                 User newUser = new User()
                 {
@@ -117,12 +99,12 @@ namespace Client.Windows
                 }
                 catch (Exception ex)
                 {
-                    ErrorWindow error = new ErrorWindow(ex.Message);
-                    error.Show();
+                    new ErrorWindow(ex.Message).ShowDialog();
                     return;
                 }
 
-                if (ResponceParse(serverResult,out serverResult))
+                string message = "";
+                if (ResponseParser.Parse(serverResult, out message))
                 {
                     int myId = int.Parse(serverResult.Split("|", 2, StringSplitOptions.RemoveEmptyEntries)[1]);
                     newUser.Id = myId;
@@ -132,15 +114,13 @@ namespace Client.Windows
                 }
                 else
                 {
-                    ErrorWindow error = new ErrorWindow(serverResult);
-                    error.ShowDialog();
+                    new ErrorWindow(message).ShowDialog();
                 }
 
             }
             else
             {
-                ErrorWindow error = new ErrorWindow("Some fields is empty","DATA ERROR");
-                error.ShowDialog();
+                new ErrorWindow("Some fields is empty").ShowDialog();
             }
         }
 

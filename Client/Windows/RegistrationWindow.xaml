@@ -38,7 +38,7 @@
                 <PasswordBox Margin=" 0 20 0 0" x:Name="pbPassword_1" Width="300" FontSize="18" materialDesign:HintAssist.Hint="Password" BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedPasswordBox}"/>
                 <PasswordBox Margin=" 0 20 0 0" x:Name="pbPassword_2" Width="300" FontSize="18" materialDesign:HintAssist.Hint="Password again" BorderThickness="2" BorderBrush="{DynamicResource MaterialDesignDivider}" Style="{StaticResource MaterialDesignOutlinedPasswordBox}"/>
                 <Button Margin="0 20 0 0" x:Name="btnRegistration" Style="{StaticResource MaterialDesignFlatMidBgButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" Width="300" materialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Content="REGISTRATION" Click="btnRegistration_Click" Cursor="Hand"/>
-                <Button Margin="0 20 0 0" x:Name="btnBack" Style="{StaticResource MaterialDesignFlatMidBgButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" Width="227" materialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Content="Back"  Click="btnBack_Click" Cursor="Hand"/>
+                <Button Margin="0 20 0 0" x:Name="btnBack" Style="{StaticResource MaterialDesignFlatButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" Width="227" materialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Content="Sign In"  Click="btnBack_Click" Cursor="Hand"/>
             </StackPanel>
         </materialDesign:DialogHost>
     </materialDesign:Card>

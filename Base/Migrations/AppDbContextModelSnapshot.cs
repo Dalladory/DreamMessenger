@@ -38,10 +38,6 @@ namespace Base.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CompanionId");
-
-                    b.HasIndex("CreatorId");
-
                     b.ToTable("Chats");
                 });
 
@@ -106,11 +102,11 @@ namespace Base.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Login")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -127,32 +123,7 @@ namespace Base.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Email")
-                        .IsUnique();
-
-                    b.HasIndex("Login")
-                        .IsUnique();
-
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("Base.Data.Models.Chat", b =>
-                {
-                    b.HasOne("Base.Data.Models.User", "Companion")
-                        .WithMany()
-                        .HasForeignKey("CompanionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Base.Data.Models.User", "Creator")
-                        .WithMany()
-                        .HasForeignKey("CreatorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Companion");
-
-                    b.Navigation("Creator");
                 });
 
             modelBuilder.Entity("Base.Data.Models.Message", b =>

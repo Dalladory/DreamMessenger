@@ -40,26 +40,7 @@ namespace Client.Windows
         public bool IsDarkTheme { get; set; }
         private readonly PaletteHelper paletteHelper=new PaletteHelper();
 
-        bool ResponceParse(string serverMessage, out string ErrorMessage)
-        {
-            if (serverMessage is not null)
-            {
-                if (serverMessage.StartsWith("true"))
-                {
-                    ErrorMessage = serverMessage;
-                    return true;
-                }
-                else
-                {
-                    ErrorMessage = serverMessage.Trim('f', 'a', 'l', 's', 'e', '|');
-                    return false;
-                }
-            }
-            else
-                ErrorMessage = null;
-            return false;
-
-        }
+        
 
         private void toggleTheme(object sender, RoutedEventArgs e)
         {
@@ -106,10 +87,8 @@ namespace Client.Windows
                     return;
                 }
 
-                if (serverResult is not null && ResponceParse(serverResult,out serverResult))
+                if (serverResult is not null && serverResult.StartsWith("true|"))
                 {
-                    //MessageBox.Show(serverResult);
-                    //int myId = int.Parse(serverResult.Split("|", 2, StringSplitOptions.RemoveEmptyEntries)[1]);
                     User user = JsonSerializer.Deserialize<User>(serverResult.Split("|", 2, StringSplitOptions.RemoveEmptyEntries)[1]);
                     MainWindow mainWindow = new MainWindow(socket, user);
                     this.Close();
@@ -117,15 +96,15 @@ namespace Client.Windows
                 }
                 else
                 {
-                    ErrorWindow error = new ErrorWindow(serverResult,"DATA ERROR");
+                    string message = "";
+                    ResponseParser.Parse(serverResult, out message);
+                    ErrorWindow error = new ErrorWindow(message);
                     error.ShowDialog();
-                    tbLogin.Text = null;
-                    pbPassword.Clear();
                 }
             }
             else
             {
-                ErrorWindow error = new ErrorWindow("One or Both of fields is empty","DATA ERROR");
+                ErrorWindow error = new ErrorWindow("One or Both of fields is empty");
                 error.ShowDialog();
             }
         }

@@ -25,8 +25,7 @@ namespace Base.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>().HasIndex(u => u.Email).IsUnique();
-            modelBuilder.Entity<User>().HasIndex(u => u.Login).IsUnique();
+            //
         }
 
         public DbSet<Chat> Chats { get; set; }
