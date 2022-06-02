@@ -37,7 +37,6 @@ namespace Client.Windows
         public bool IsDarkTheme { get; set; }
         private readonly PaletteHelper paletteHelper = new PaletteHelper();
 
-
         private void toggleTheme(object sender, RoutedEventArgs e)
         {
             ITheme theme = paletteHelper.GetTheme();
@@ -70,9 +69,13 @@ namespace Client.Windows
                 && !string.IsNullOrEmpty(tbSurname.Text)
                 && !string.IsNullOrEmpty(tbEmail.Text)
                 && !string.IsNullOrEmpty(tbLogin.Text)
-                && !string.IsNullOrEmpty(pbPassword_1.Password)
-                && pbPassword_1.Password == pbPassword_2.Password)
+                && !string.IsNullOrEmpty(pbPassword_1.Password))
             {
+                if(pbPassword_1.Password != pbPassword_2.Password)
+                {
+                    new ErrorWindow("The passwords don't match").ShowDialog();
+                    return;
+                }
 
                 User newUser = new User()
                 {
@@ -93,15 +96,15 @@ namespace Client.Windows
                     byte[] bufferReceived = new byte[1024];
                     int receiveBytesCount = socket.Receive(bufferReceived);
                     serverResult = Encoding.UTF8.GetString(bufferReceived, 0, receiveBytesCount);
-                    MessageBox.Show(serverResult);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    new ErrorWindow(ex.Message).ShowDialog();
                     return;
                 }
 
-                if (serverResult is not null && serverResult.StartsWith("true"))
+                string message = "";
+                if (ResponseParser.Parse(serverResult, out message))
                 {
                     int myId = int.Parse(serverResult.Split("|", 2, StringSplitOptions.RemoveEmptyEntries)[1]);
                     newUser.Id = myId;
@@ -111,14 +114,22 @@ namespace Client.Windows
                 }
                 else
                 {
-                    MessageBox.Show(serverResult);
+                    new ErrorWindow(message).ShowDialog();
                 }
 
             }
             else
             {
-                MessageBox.Show("Your data is not valid");
+                new ErrorWindow("Some fields is empty").ShowDialog();
             }
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            this.Close();
+            
         }
     }
 }

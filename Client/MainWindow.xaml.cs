@@ -35,7 +35,8 @@ namespace Client
         Task receiveTask;
 
         User my;
-
+        User currentCompanion;
+        Chat currentChat;
         string responceStr = "";
 
         public MainWindow(Socket socket, User my)
@@ -57,29 +58,23 @@ namespace Client
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                new ErrorWindow(ex.Message).ShowDialog();
             }
 
-
-            //MessageBox.Show(strChats);
             if (strChats.StartsWith("true"))
             {
                 strChats = strChats.Replace("true|", "");
-                //ChatList.ItemsSource = JsonSerializer.Deserialize<ObservableCollection<Chat>>(strChats);
                 List<Chat> receiveChats = JsonSerializer.Deserialize<List<Chat>>(strChats);
 
-                receiveChats = receiveChats.Where(c => c.Messages.Count > 0).OrderByDescending(c => c.Messages.Last().SendDate).ToList();
-
-
-                foreach (Chat ch in receiveChats)
+                List<Chat> newChatsList = receiveChats.Where(c => c.Messages.Count > 0).OrderByDescending(c => c.Messages.Last().SendDate).ToList();
+                newChatsList.AddRange(receiveChats.Where((c) => c.Messages.Count == 0));
+                foreach (Chat ch in newChatsList)
                 {
-                    //MessageBox.Show(ch.Messages.Last().SendDate.ToString("g"));
                     chats.Add(ch);
                 }
             }
 
             ChatList.ItemsSource = chats;
-
         }
         public bool IsDarkTheme { get; set; }
         private readonly PaletteHelper paletteHelper = new PaletteHelper();
@@ -128,7 +123,7 @@ namespace Client
             }
             catch (Exception ex)
             {
-                MessageBox.Show("1 " + ex.Message);
+                new ErrorWindow(ex.Message).ShowDialog();
             }
             return bytesCount;
 
@@ -144,8 +139,6 @@ namespace Client
                 byte[] buffer = new byte[50000];
                 try
                 {
-                    //_asyncResult = socket.BeginReceive(buffer, 0, buffer.Length, SocketFlags.None, null, null);
-                    //_socket.EndReceive(_asyncResult);
                     receiveBytesCount = _socket.Receive(buffer);
                     if (receiveBytesCount == 0)
                     {
@@ -158,19 +151,13 @@ namespace Client
                         case "AddMessage":
                             {
                                 Message message = JsonSerializer.Deserialize<Message>(command[1]);
-                                //Chat chat = chts.FirstOrDefault(c => c.Id == message.ChatId);
-                                //if (chat != null)
-                                //{
 
-                                //    chat.Messages.Add(message);
-                                //}
                                 AddMessageToChat(message);
                                 break;
                             }
                         case "AddChat":
                             {
                                 Chat chat = JsonSerializer.Deserialize<Chat>(command[1]);
-                                //chts.Add(chat);
                                 AddChat(chat);
                                 break;
                             }
@@ -181,10 +168,8 @@ namespace Client
                             }
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show("Receive " + ex.Message);
-                    //continue;
                 }
 
             }
@@ -200,11 +185,11 @@ namespace Client
                 messages.Add(message);
                 MessagesList.ItemsSource = messages;
 
-                int selectedIndex = ChatList.SelectedIndex;
+                //int selectedIndex = ChatList.SelectedIndex;
                 ChatList.ItemsSource = null;
                 chats.OrderByDescending(c => c.Messages.Last().SendDate);
                 ChatList.ItemsSource = chats;
-                ChatList.SelectedIndex = selectedIndex;
+                ChatList.SelectedItem = currentChat;
                 MessagesList.ScrollIntoView(message);
             }));
         }
@@ -219,7 +204,6 @@ namespace Client
 
         private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //MessageBox.Show(SearchTb.Text);
             MessagesZoneUpdate(Visibility.Hidden);
             StartChatPanel.Visibility = Visibility.Hidden;
             ChatList.Visibility = Visibility.Hidden;
@@ -243,9 +227,8 @@ namespace Client
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                new ErrorWindow(ex.Message).ShowDialog();
             }
-            //MessageBox.Show(usersResponce);
 
             if (usersResponce.StartsWith("true|"))
             {
@@ -265,20 +248,29 @@ namespace Client
         private void ChatList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             MessagesZoneUpdate(Visibility.Visible);
-            if (ChatList.SelectedItem == null) return;
-            MessagesList.ItemsSource = ((Chat)ChatList.SelectedItem).Messages;
-            if (((Chat)ChatList.SelectedItem).Messages.Count > 0)
+            if(ChatList.SelectedItem == null)
             {
-                MessagesList.ScrollIntoView(((Chat)ChatList.SelectedItem).Messages.Last());
+                return;
             }
-            CompanionProfileBtn.Content = ((Chat)ChatList.SelectedItem).Companion.FullName;
+            currentChat = (Chat)ChatList.SelectedItem;
+            currentCompanion = ((Chat)ChatList.SelectedItem).Companion;
+            
+            //if (currentChat == null) return;
+            MessagesList.ItemsSource = currentChat.Messages;
+            if (currentChat.Messages.Count > 0)
+            {
+                MessagesList.ScrollIntoView(currentChat.Messages.Last());
+            }
+            CompanionProfileBtn.Content = currentChat.Companion.FullName;
         }
 
         private void UsersList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (UsersList.SelectedItem == null) return;
+            currentCompanion = (User)UsersList.SelectedItem;
 
-            Chat chat = chats.FirstOrDefault(c => c.CreatorId == ((User)UsersList.SelectedItem).Id || c.CompanionId == ((User)UsersList.SelectedItem).Id);
+            Chat chat = chats.FirstOrDefault(c => c.CreatorId == currentCompanion.Id || c.CompanionId == currentCompanion.Id);
+            
             if (chat == null)
             {
                 MessagesZoneUpdate(Visibility.Hidden);
@@ -294,11 +286,12 @@ namespace Client
             }
             else
             {
+                currentChat = chat;
                 StartChatPanel.Visibility = Visibility.Hidden;
                 MessagesZoneUpdate(Visibility.Visible);
 
                 MessagesList.ItemsSource = chat.Messages;
-                CompanionProfileBtn.Content = chat.Companion.FullName;
+                CompanionProfileBtn.Content = currentCompanion.FullName;
             }
 
 
@@ -307,15 +300,14 @@ namespace Client
         private void YStartChatBtn_Click(object sender, RoutedEventArgs e)
         {
             StartChatPanel.Visibility = Visibility.Hidden;
-            //MessageBox.Show(((User)UsersList.SelectedItem).Id.ToString());
-
+            currentCompanion = (User)UsersList.SelectedItem;
 
             Chat chat = new Chat()
             {
                 CreatorId = myUserId,
                 Creator = my,
-                CompanionId = ((User)UsersList.SelectedItem).Id,
-                Companion = (User)UsersList.SelectedItem
+                CompanionId = currentCompanion.Id,
+                Companion = currentCompanion
             };
 
 
@@ -325,23 +317,22 @@ namespace Client
             {
                 SendTextToServer("CreateChat|" + serializedChat, out result);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
             }
 
             if (result.StartsWith("true"))
             {
                 chat.Id = int.Parse(result.Replace("true|", ""));
-                //chat.Creator = my;
-                //chat.Companion = (User)UsersList.SelectedItem;
                 AddChat(chat);
-                //chats.Add(chat);
+                currentChat = chat;
                 SearchTb.Text = "";
             }
             else
             {
-                MessageBox.Show(result);
+                string message = "";
+                ResponseParser.Parse(result, out message);
+                new ErrorWindow(message).ShowDialog();
             }
         }
 
@@ -355,25 +346,22 @@ namespace Client
             //new CompanionProfileWindow();
         }
 
-        private void MsgSendBtn_Click(object sender, RoutedEventArgs e)
+        private void SendMessage()
         {
-            if (string.IsNullOrEmpty(MessageTb.Text))
+            if (string.IsNullOrEmpty(MessageTb.Text)|| MessageTb.Text=="")
             {
                 return;
             }
 
             Message message = new Message()
             {
-                ChatId = ((Chat)ChatList.SelectedItem).Id,
+                ChatId = currentChat.Id,
                 CreatorId = myUserId,
-                CompanionId = ((Chat)ChatList.SelectedItem).Companion.Id,
+                CompanionId = currentCompanion.Id,
                 Text = MessageTb.Text,
                 SendDate = DateTime.Now
             };
 
-            //byte[] buffer = Encoding.UTF8.GetBytes("AddMessage|" + JsonSerializer.Serialize<Message>(message));
-
-            //int receivedBytesCount = socket.Send(buffer);
             string result = "";
             try
             {
@@ -381,25 +369,43 @@ namespace Client
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                new ErrorWindow(ex.Message).ShowDialog();
                 return;
             }
-            AddMessageToChat(message);
 
-            //ObservableCollection<Message> messages = ((Chat)ChatList.SelectedItem).Messages;
-            //MessagesList.ItemsSource = null;
-            //messages.Add(message);
-            //MessagesList.ItemsSource = messages;
+            string responseMessage = "";
+            if(ResponseParser.Parse(result, out responseMessage))
+            {
+                AddMessageToChat(message);
+                MessageTb.Text = "";
+            }
+            else
+            {
+                new ErrorWindow(responseMessage).ShowDialog();
+            }
+        }
 
-            //((Chat)ChatList.SelectedItem).Messages.Add(message);
-            //int selectedIndex = ChatList.SelectedIndex;
-            //ChatList.ItemsSource = null;
+        private void MsgSendBtn_Click(object sender, RoutedEventArgs e)
+        {
+            SendMessage();
+        }
 
-            //ChatList.ItemsSource = chats;
-            //ChatList.SelectedIndex = selectedIndex;
-
-            MessageTb.Text = "";
-
+        private void MessageTb_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key != System.Windows.Input.Key.Enter) return;
+            //if (e.Key == Key.Enter)
+            //{
+            //    if (Keyboard.Modifiers.HasFlag(ModifierKeys.Control))
+            //    {
+            //        MessageBox.Show("Control + Enter pressed");
+            //    }
+            //    else if (Keyboard.Modifiers.HasFlag(ModifierKeys.Shift))
+            //    {
+            //        MessageBox.Show("Shift + Enter pressed");
+            //    }
+            //}
+            e.Handled = true;
+            SendMessage();
 
         }
     }

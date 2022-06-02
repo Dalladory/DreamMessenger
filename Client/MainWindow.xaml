@@ -24,8 +24,8 @@
 
 
         <TextBox x:Name="SearchTb" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10,5,10,3" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="25" FontSize="15" TextChanged="SearchTb_TextChanged"/>
-        <TextBox x:Name="MessageTb" Grid.Row="1" Grid.Column="2" Margin="5,0,120,3" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Height="25" FontSize="15" HorizontalAlignment="Stretch"/>
-        <Button x:Name="MsgSendBtn" Content="Send" Grid.Row="1" Grid.Column="2" Margin="0,0,8,3"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="25" FontSize="15" Width="100" Click="MsgSendBtn_Click"/>
+        <TextBox x:Name="MessageTb"  Grid.Row="1" Grid.Column="2" Margin="5,0,120,3" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Height="30" FontSize="15" HorizontalAlignment="Stretch" Cursor="Arrow" KeyUp="MessageTb_KeyUp"/>
+        <Button x:Name="MsgSendBtn" Content="Send" Grid.Row="1" Grid.Column="2" Margin="0,0,8,3"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="25" FontSize="15" Width="100" Click="MsgSendBtn_Click" Cursor="Hand"/>
         <Button x:Name="CompanionProfileBtn" Grid.Column="2" Grid.Row="0" Padding="15,5,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Margin="0,0,35,0" Click="CompanionProfileBtn_Click">Full Name</Button>
         <materialDesign:PopupBox HorizontalAlignment="Right"  PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Height="25" Grid.Column="2">
             <StackPanel>
@@ -72,9 +72,9 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <Image Source="\Images\avatar.png" Grid.RowSpan="2" Grid.Column="0" Width="40" Height="40" HorizontalAlignment="Left" Margin="0,0,8,0"></Image>
-                        <TextBlock x:Name="ChatHeaderTb" Text="{Binding Companion.FullName}" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch"></TextBlock>
-                        <TextBlock x:Name="ChatLastMsgTb" Text="{Binding LastMsg}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left"></TextBlock>
-                        <TextBlock x:Name="LastMsgTimeSendTb" Text="{Binding LastMsgDateStr}" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right"/>
+                        <TextBlock x:Name="ChatHeaderTb" Text="{Binding Companion.FullName}" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" FontSize="15"></TextBlock>
+                        <TextBlock x:Name="ChatLastMsgTb" Text="{Binding LastMsg}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" FontSize="12"></TextBlock>
+                        <TextBlock x:Name="LastMsgTimeSendTb" Text="{Binding LastMsgDateStr}" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" FontSize="10"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -117,8 +117,8 @@
                         </Grid.ColumnDefinitions>
                         <Image Source="\Images\avatar.png" Grid.RowSpan="2" Grid.Column="0" Width="30" Height="30" HorizontalAlignment="Left" Margin="0,0,8,0"></Image>
 
-                        <TextBlock x:Name="Text" Text="{Binding Text}" Grid.Row="0" Grid.Column="1" MaxWidth="400" TextWrapping="Wrap"></TextBlock>
-                        <TextBlock x:Name="SendDate" Text="{Binding SendDateStr}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right"></TextBlock>
+                        <TextBlock x:Name="Text" Text="{Binding Text}" Grid.Row="0" Grid.Column="1" MaxWidth="400" TextWrapping="Wrap" FontSize="15"></TextBlock>
+                        <TextBlock x:Name="SendDate" Text="{Binding SendDateStr}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" FontSize="10"></TextBlock>
 
 
                     </Grid>

@@ -39,6 +39,7 @@ namespace Client.Windows
         }
         public bool IsDarkTheme { get; set; }
         private readonly PaletteHelper paletteHelper=new PaletteHelper();
+
         
 
         private void toggleTheme(object sender, RoutedEventArgs e)
@@ -67,7 +68,7 @@ namespace Client.Windows
             DragMove();
         }
 
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
+       private void logIn()
         {
             if (!string.IsNullOrEmpty(tbLogin.Text) && !string.IsNullOrEmpty(pbPassword.Password))
             {
@@ -82,14 +83,12 @@ namespace Client.Windows
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    ErrorWindow error = new ErrorWindow(ex.Message);
                     return;
                 }
 
-                if (serverResult is not null && serverResult.StartsWith("true"))
+                if (serverResult is not null && serverResult.StartsWith("true|"))
                 {
-                    //MessageBox.Show(serverResult);
-                    //int myId = int.Parse(serverResult.Split("|", 2, StringSplitOptions.RemoveEmptyEntries)[1]);
                     User user = JsonSerializer.Deserialize<User>(serverResult.Split("|", 2, StringSplitOptions.RemoveEmptyEntries)[1]);
                     MainWindow mainWindow = new MainWindow(socket, user);
                     this.Close();
@@ -97,14 +96,22 @@ namespace Client.Windows
                 }
                 else
                 {
-                    MessageBox.Show(serverResult);
+                    string message = "";
+                    ResponseParser.Parse(serverResult, out message);
+                    ErrorWindow error = new ErrorWindow(message);
+                    error.ShowDialog();
                 }
             }
             else
             {
-                MessageBox.Show("Login or password is wrong");
+                ErrorWindow error = new ErrorWindow("One or Both of fields is empty");
+                error.ShowDialog();
             }
+        }
 
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            logIn();
         }
 
         private void btnRegistration_Click(object sender, RoutedEventArgs e)
@@ -113,6 +120,13 @@ namespace Client.Windows
             this.Close();
             registrationWindow.Show();
 
+        }
+
+        private void pbPassword_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key != System.Windows.Input.Key.Enter) return;
+            e.Handled = true;
+            logIn();
         }
     }
 }

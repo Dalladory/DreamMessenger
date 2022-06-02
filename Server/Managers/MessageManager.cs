@@ -13,10 +13,11 @@ namespace Server.Managers
     {
         public static string AddMessage(string serializedMessage, out int companionId)
         {
+            Message message;
             companionId = -1;
             try
             {
-                Message message = JsonSerializer.Deserialize<Message>(serializedMessage);
+                message = JsonSerializer.Deserialize<Message>(serializedMessage);
                 ChatAndMessageRepository.SendMessage(message);
                 companionId = message.CompanionId;
             }
@@ -24,7 +25,7 @@ namespace Server.Managers
             {
                 return "false|" + ex.Message;
             }
-            return "true";
+            return "true|" + message.Id;
         }
 
         

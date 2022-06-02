@@ -51,7 +51,7 @@ namespace Server
                         {
                             int companionId;
                             result = MessageManager.AddMessage(arr[1], out companionId);
-                            if (result.StartsWith("true"))
+                            if (result.StartsWith("true|"))
                             {
                                 Task.Run(() => SendMessageToCompanion(arr[1], companionId));
                             }
@@ -62,7 +62,7 @@ namespace Server
                             int companionId;
                             string resultChat;
                             result = ChatManager.CreateChat(arr[1], out resultChat, out companionId);
-                            if (result.StartsWith("true"))
+                            if (result.StartsWith("true|"))
                             {
                                 Task.Run(() => SendChatToCompanion(resultChat, companionId));
                             }
